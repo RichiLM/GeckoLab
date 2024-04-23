@@ -1,0 +1,17 @@
+Esta es la estructura del proyecto:
+
+- assets: todos los elementos de la página (imagenes, iconos, videos, etc.)
+
+- layouts: todos los elementos que vamos a reutilizar para no pegarlos varias veces (nav, footer, etc)
+
+- components: todas las páginas que tengan contenido agregando layouts creados
+
+- css: todos los estilos css que utilicemos en las paginas
+
+- src: carpeta donde se van a guardar imagenes y recursos del sistema (imagenes de productos, pdf de fichas técnicas, etc.)
+
+- utils: archivos php o scrips que podemos reutilizar como el de conexion.php
+
+- js: codigos javascript que ocupemos en la pagina
+
+Notas (aqui podemos dejar notas que nos ayuden despues)
