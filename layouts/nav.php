@@ -48,4 +48,4 @@
         </div>
     </div>
 </nav>
-<hr style="color: rgb(51, 255, 0); margin: 0;">
+<hr style="color: rgb(18, 168, 255); margin: 0;">
