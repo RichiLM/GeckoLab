@@ -34,7 +34,7 @@ session_start();
   <div class="container-fluid">
     <div class="row text-center mx-3 mt-5 mb-5">
       <div class="col-sm">
-        <h2 class="titulo display-1 text-uppercase my-auto">GeckoLab</h2>
+        <h2 class="titulo display-1 my-auto">GECKO-LAB</h2>
       </div>
     </div>
   </div>
