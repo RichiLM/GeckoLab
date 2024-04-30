@@ -46,14 +46,14 @@ $ruta = '../';
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-lg-7 mb-4 mb-lg-0">
-          <div class="card mb-3" style="border-radius: .5rem; border-color:rgb(51, 255, 0)">
+          <div class="card mb-3" style="border-radius: .5rem; border-color:rgb(18, 168, 255);">
             <div class="row g-0">
-              <div class="col-md-4 gradient-custom text-center" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; color:rgb(51, 255, 0); background-color: black;">
-                <img src="../assets/Logos/YAFINAL.png" alt="Avatar" class="img-fluid my-4" style="width: 150px;" />
+              <div class="col-md-4 gradient-custom text-center" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; color:rgb(18, 168, 255); background-color: black;">
+                <img src="../assets/Logos/GL 1.png" alt="Avatar" class="img-fluid my-4" style="width: 150px;" />
                 <h1><?php echo $uname; ?></h1>
               </div>
               <div class="col-md-8">
-                <div class="card-body p-4" style="background-color: #171717; color:rgb(51, 255, 0);">
+                <div class="card-body p-4" style="background-color: #171717; color:rgb(18, 168, 255);">
                   <h6>Información</h6>
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1">

@@ -10,13 +10,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/productos.php'; ?>">Cursos</a>
+                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . '#'; ?>">Cursos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/carrito.php'; ?>">Avance</a>
+                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . '#'; ?>">Avance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/nosotros.php'; ?>">Sobre Nosotros</a>
+                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . '#'; ?>">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
                     <!--<button class="nav-link active" style="color: rgb(18, 168, 255); font-size: 22px;" aria-current="page" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">Perfil</button>-->

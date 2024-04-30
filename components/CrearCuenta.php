@@ -30,7 +30,7 @@
                         <div class="card-body p-3 text-center">
                             <form action="login.php" method="post">
 
-                                <h2 class="fw-bold mb-4 text-uppercase" style="color:rgb(51, 255, 0);">Login</h2>
+                                <h2 class="fw-bold mb-4 text-uppercase" style="color:rgb(18, 168, 255);">Login</h2>
                                 <div class="form-outline form-white mb-4">
                                     <?php if (isset($_GET['error'])) { ?>
                                         <p class="error"><?php echo $_GET['error']; ?></p>
@@ -46,7 +46,7 @@
 
                                 <!-- <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">Olvidaste tu contraseña?</a></p> -->
 
-                                <button class="btn  btn-lg px-3" type="submit" style="background-color: rgb(51, 255, 0); color: black;">Ingresar</button>
+                                <button class="btn  btn-lg px-3" type="submit" style="background-color: rgb(18, 168, 255); color: black;">Ingresar</button>
                             </form>
 
                             <div>
@@ -62,7 +62,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content" style="background-color: #202124;">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel" style="color:rgb(51, 255, 0);">Crear Cuenta</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel" style="color:rgb(18, 168, 255);">Crear Cuenta</h5>
                                             </div>
                                             <div class="modal-body">
                                                 <form action="registro.php" method="post">
@@ -88,7 +88,7 @@
                                                     <input type="email" name="email" placeholder="Correo Electrónico" class="form-control input-sm" style="text-align: center;"><br>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary" data-dismiss="modal" id="crear" style="background-color: rgb(51, 255, 0); color: black;">Crear Cuenta</button>
+                                                <button type="submit" class="btn btn-primary" data-dismiss="modal" id="crear" style="background-color: rgb(18, 168, 255); color: black;">Crear Cuenta</button>
                                             </div>
                                             </form>
                                         </div>
