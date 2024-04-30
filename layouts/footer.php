@@ -4,7 +4,7 @@
     <!-- Footer -->
     <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
         <!-- Section: Social media -->
-        <section class="d-flex justify-content-between p-4 text-black" style="background-color: #33ff00">
+        <section class="d-flex justify-content-between p-4 text-black" style="background-color: rgb(18, 168, 255)">
             <!-- Left -->
             <div class="me-5">
                 <span class="fw-bold">Mantente en contácto en nuestras redes sociales:</span>
@@ -44,10 +44,10 @@
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
-                        <h6 class="text-uppercase fw-bold">GECKOGAMING</h6>
+                        <h6 class="text-uppercase fw-bold">GECKO-LAB</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 140px; background-color: #7c4dff; height: 2px" />
                         <p>
-                            Ofrecemos controles de juego modulares personalizables en línea y perifericos gaming. Los clientes eligen piezas para crear controles a medida. También ofrecemos piezas individuales para reparaciones y mejoras.
+                            Somos la mejor opción para aprender ciencia de datos online. Nuestro curso es dinámico, práctico y educativo. Te ofrecemos conocimientos teóricos y habilidades prácticas a través de proyectos reales.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -55,19 +55,19 @@
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Productos</h6>
+                        <h6 class="text-uppercase fw-bold">Cursos</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100px; background-color: #7c4dff; height: 2px" />
                         <p>
-                            <a href="#!" class="text-white">Controles Gaming</a>
+                            <a href="#!" class="text-white">Analisis de datos</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Computadoras</a>
+                            <a href="#!" class="text-white">Inteligencia de Negocios</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Perifericos</a>
+                            <a href="#!" class="text-white">Machine Learning</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Videojuegos</a>
+                            <a href="#!" class="text-white">Deep Learning</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -84,7 +84,7 @@
                             <a href="#!" class="text-white">Registrarse</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Carrito de compras</a>
+                            <a href="#!" class="text-white">Cursos</a>
                         </p>
                         <p>
                             <a href="#!" class="text-white">Ayuda</a>
@@ -98,7 +98,7 @@
                         <h6 class="text-uppercase fw-bold">Contacto</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 110px; background-color: #7c4dff; height: 2px" />
                         <p><i class="fas fa-home mr-3"></i> Cuautitlán, México</p>
-                        <p><i class="fas fa-envelope mr-3"></i> geckogaming@gg.com</p>
+                        <p><i class="fas fa-envelope mr-3"></i> geckolab@gl.com</p>
                         <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
                         <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
                     </div>
@@ -112,7 +112,7 @@
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
             &copy; 2024 Copyright:
-            <a class="text-white" href="#">geckogaming.com</a>
+            <a class="text-white" href="#">geckolab.com</a>
         </div>
         <!-- Copyright -->
     </footer>
