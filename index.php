@@ -10,7 +10,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeckoGaming</title>
+  <title>Gecko-Lab</title>
   <link rel="icon" href="<?php echo $ruta . 'assets/Logos/icono1.png'; ?>" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap">
@@ -21,49 +21,124 @@ session_start();
 </head>
 
 <body>
-  <?php
-  require($ruta . 'layouts/nav.php');
-  ?>
-  <div class="container-fluid">
-    <div class="row">
+  <?php require($ruta . 'layouts/nav.php'); ?>
+
+  <div class="container-fluid" >
+    <div class="row  text-center  mt-5 mb-5" >
       <div class="col-sm">
-        <!-- <img src="assets/Poster/click.jpg" class="d-block w-100" alt="..."> -->
+        <h3 class="text-white display-1 my-auto">Curso en</h3>
+        <h2 class="titulo display-1 my-auto">CIENCIA DE DATOS</h2>
       </div>
     </div>
-  </div>
-  <div class="container-fluid">
+
+   <div class="row  text-center " >
+      <div class="col-sm">
+        <img src="assets/cd.avif" alt="">
+      </div>
+    </div>
+    
     <div class="row text-center mx-3 mt-5 mb-5">
       <div class="col-sm">
-        <h2 class="titulo display-1 my-auto">GECKO-LAB</h2>
+        <p class="titulo display-1 my-auto" style="font-size: 40px;">Bienvenido a nuestra Plataforma Educativa de Ciencia de Datos</p>
       </div>
     </div>
-  </div>
-    
-    <div class="container-fluid">
-    <div class="row justify-content-center align-items-center">
-        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/Logos/ds.jpg" class="d-block img-fluid mx-auto" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/Logos/ds1.jpg" class="d-block img-fluid mx-auto" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/Logos/ds3.jpeg" class="d-block img-fluid mx-auto" alt="...">
-                </div>
+
+    <div class="row mx-3 mb-5">
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <p class="my-auto justify-text text-white" style="font-size: 25px;">En un mundo cada vez más impulsado por la información, la capacidad de extraer conocimiento significativo de conjuntos de datos complejos es una habilidad fundamental en una amplia gama de campos y sectores. En nuestra plataforma educativa de Ciencia de Datos, nos complace ofrecer un curso completo diseñado para proporcionar a los estudiantes las habilidades y el conocimiento necesarios para sobresalir en este emocionante campo interdisciplinario.</p>
+      </div>
+      <div class="col-md-6">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/Logos/ds.jpg" class="d-block w-100" alt="...">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel-item">
+              <img src="assets/Logos/ds1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/Logos/ds3.jpeg" class="d-block w-100" alt="...">
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+    
+    <div class="row text-center mx-3 mt-5 mb-5">
+      <div class="col-sm">
+        <p class="titulo display-1 my-auto" style="font-size: 40px;">La Importancia de la Ciencia de Datos en el Siglo XXI</p>
+      </div>
+    </div>
+    
+    <div class="row mx-3 mb-5">
+      
+      <div class="col-md-6 align-items-center justify-content-center">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/me.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/finanzas.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/tec.jpeg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <p class="my-auto justify-text text-white" style="font-size: 25px;">Desde la medicina hasta las finanzas, desde la tecnología hasta la investigación académica, la ciencia de datos desempeña un papel vital en la toma de decisiones informadas y en la generación de valor a partir de datos brutos. La capacidad de analizar y comprender patrones, tendencias y correlaciones en conjuntos de datos complejos permite a las organizaciones y profesionales abordar desafíos de manera más eficiente, identificar oportunidades de mejora y tomar decisiones estratégicas fundamentadas.</p>
+      </div>
+    </div>
+
+
+  <div class="row text-center mx-3 mt-5 mb-5">
+      <div class="col-sm">
+        <p class="titulo display-1 my-auto" style="font-size: 60px;">¿Qué aprenderas?</p>
+      </div>
+    </div>
+
+    <div class="row mx-3 mb-5">
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        
+        	<ol class="my-auto justify-text text-white" style="font-size: 25px;">
+  <li>Introducción a la Ciencia de Datos</li>
+  <li>Fundamentos de Programación</li>
+  <li>Manipulación de Datos</li>
+  <li>Visualización de Datos</li>
+  <li>Estadística Descriptiva</li>
+  <li>Aprendizaje Automático (Machine Learning)</li>
+  <li>Aprendizaje Profundo (Deep Learning)</li>
+  <li>Proyecto Final</li>
+  <li>Ética y Privacidad en Ciencia de Datos</li>
+</ol>
+        
+      </div>
+      <div class="col-md-6">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/tec2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/tec3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/tec4.webp" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+   
+   
+    
+    
 
 
     <!-- Modal -->
