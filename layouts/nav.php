@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/curso.php'; ?>">Cursos</a>
+                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/curso.php'; ?>">Curso</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . '#'; ?>">Avance</a>

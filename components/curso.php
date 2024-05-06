@@ -42,6 +42,7 @@ session_start();
                         <li class="Cuerpo-texto">Importancia en diversos campos y sectores.</li>
                         <br>
                         <li class="Cuerpo-texto">Historia y evolución de la ciencia de datos.</li>
+                        <a href="Temario/intcd.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
@@ -62,6 +63,7 @@ session_start();
                         <li class="Cuerpo-texto">Estructuras de datos y control de flujo.</li>
                         <br>
                         <li class="Cuerpo-texto">Funciones y módulos en Python.</li>
+                        <a href="Temario/fundamentos.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
@@ -82,6 +84,7 @@ session_start();
                         <li class="Cuerpo-texto">Lectura y escritura de datos en diferentes formatos.</li>
                         <br>
                         <li class="Cuerpo-texto">Limpieza y preprocesamiento de datos.</li>
+                        <a href="Temario/manipulacion.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
@@ -102,6 +105,7 @@ session_start();
                         <li class="Cuerpo-texto">Librerías populares de visualización en Python (Matplotlib, Seaborn).</li>
                         <br>
                         <li class="Cuerpo-texto">Personalización y diseño de gráficos.</li>
+                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
@@ -122,6 +126,7 @@ session_start();
                         <li class="Cuerpo-texto">Análisis exploratorio de datos.</li>
                         <br>
                         <li class="Cuerpo-texto">Correlación y covarianza.</li>
+                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
@@ -142,6 +147,7 @@ session_start();
                         <li class="Cuerpo-texto">Algoritmos de clasificación y regresión.</li>
                         <br>
                         <li class="Cuerpo-texto">Evaluación de modelos y selección de características.</li>
+                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
@@ -162,6 +168,7 @@ session_start();
                         <li class="Cuerpo-texto">Bibliotecas de Deep Learning (TensorFlow, Keras, PyTorch).</li>
                         <br>
                         <li class="Cuerpo-texto">Aplicaciones de Deep Learning en visión por computadora, procesamiento de lenguaje natural, y más.</li>
+                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
@@ -180,6 +187,7 @@ session_start();
                         <li class="Cuerpo-texto">Desarrollo de un proyecto de ciencia de datos desde la adquisición de datos hasta la implementación del modelo.</li>
                         <br>
                         <li class="Cuerpo-texto">Presentación de resultados y conclusiones.</li>
+                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
@@ -200,6 +208,7 @@ session_start();
                         <li class="Cuerpo-texto">Protección de la privacidad de los usuarios.</li>
                         <br>
                         <li class="Cuerpo-texto">Responsabilidad y transparencia en la toma de decisiones basada en datos.</li>
+                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
