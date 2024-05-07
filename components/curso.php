@@ -23,7 +23,7 @@ session_start();
 <body>
   <?php require($ruta . 'layouts/nav.php'); ?>
 
-  <div class="container-fluid">
+  <div class="container">
     <h2 class="titulo display-1 my-auto text-center mt-5 mb-5">Temario</h2>
 
     <div class="accordion justify-content-center" id="accordionPanelsStayOpenExample">

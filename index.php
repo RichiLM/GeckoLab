@@ -23,20 +23,20 @@ session_start();
 <body>
   <?php require($ruta . 'layouts/nav.php'); ?>
 
-  <div class="container-fluid" >
-    <div class="row  text-center  mt-5 mb-5" >
+  <div class="container">
+    <div class="row  text-center  mt-5 mb-5">
       <div class="col-sm">
         <h3 class="text-white display-1 my-auto">Curso en</h3>
         <h2 class="titulo display-1 my-auto">CIENCIA DE DATOS</h2>
       </div>
     </div>
 
-   <div class="row  text-center " >
+    <div class="row  text-center ">
       <div class="col-sm">
         <img src="assets/cd.avif" alt="">
       </div>
     </div>
-    
+
     <div class="row text-center mx-3 mt-5 mb-5">
       <div class="col-sm">
         <p class="titulo display-1 my-auto" style="font-size: 40px;">Bienvenido a nuestra Plataforma Educativa de Ciencia de Datos</p>
@@ -63,15 +63,15 @@ session_start();
         </div>
       </div>
     </div>
-    
+
     <div class="row text-center mx-3 mt-5 mb-5">
       <div class="col-sm">
         <p class="titulo display-1 my-auto" style="font-size: 40px;">La Importancia de la Ciencia de Datos en el Siglo XXI</p>
       </div>
     </div>
-    
+
     <div class="row mx-3 mb-5">
-      
+
       <div class="col-md-6 align-items-center justify-content-center">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
@@ -87,15 +87,15 @@ session_start();
           </div>
         </div>
       </div>
-      
-      
+
+
       <div class="col-md-6 d-flex align-items-center justify-content-center">
         <p class="my-auto justify-text text-white" style="font-size: 25px;">Desde la medicina hasta las finanzas, desde la tecnología hasta la investigación académica, la ciencia de datos desempeña un papel vital en la toma de decisiones informadas y en la generación de valor a partir de datos brutos. La capacidad de analizar y comprender patrones, tendencias y correlaciones en conjuntos de datos complejos permite a las organizaciones y profesionales abordar desafíos de manera más eficiente, identificar oportunidades de mejora y tomar decisiones estratégicas fundamentadas.</p>
       </div>
     </div>
 
 
-  <div class="row text-center mx-3 mt-5 mb-5">
+    <div class="row text-center mx-3 mt-5 mb-5">
       <div class="col-sm">
         <p class="titulo display-1 my-auto" style="font-size: 60px;">¿Qué aprenderas?</p>
       </div>
@@ -103,19 +103,19 @@ session_start();
 
     <div class="row mx-3 mb-5">
       <div class="col-md-6 d-flex align-items-center justify-content-center">
-        
-        	<ol class="my-auto justify-text text-white" style="font-size: 25px;">
-  <li>Introducción a la Ciencia de Datos</li>
-  <li>Fundamentos de Programación</li>
-  <li>Manipulación de Datos</li>
-  <li>Visualización de Datos</li>
-  <li>Estadística Descriptiva</li>
-  <li>Aprendizaje Automático (Machine Learning)</li>
-  <li>Aprendizaje Profundo (Deep Learning)</li>
-  <li>Proyecto Final</li>
-  <li>Ética y Privacidad en Ciencia de Datos</li>
-</ol>
-        
+
+        <ol class="my-auto justify-text text-white" style="font-size: 25px;">
+          <li>Introducción a la Ciencia de Datos</li>
+          <li>Fundamentos de Programación</li>
+          <li>Manipulación de Datos</li>
+          <li>Visualización de Datos</li>
+          <li>Estadística Descriptiva</li>
+          <li>Aprendizaje Automático (Machine Learning)</li>
+          <li>Aprendizaje Profundo (Deep Learning)</li>
+          <li>Proyecto Final</li>
+          <li>Ética y Privacidad en Ciencia de Datos</li>
+        </ol>
+
       </div>
       <div class="col-md-6">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -133,15 +133,6 @@ session_start();
         </div>
       </div>
     </div>
-
-    
-   
-   
-    
-    
-
-
-    <!-- Modal -->
     <div class="modal fade" id="modalIniciarSesion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content" style="background-color: #202124;">

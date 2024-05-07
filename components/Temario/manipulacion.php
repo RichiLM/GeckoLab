@@ -24,15 +24,15 @@ session_start();
   <?php require($ruta . 'layouts/nav.php'); ?>
 
 
- <div class="container-fluid" >
-    <div class="row  text-center  mt-5 mb-5" >
+  <div class="container">
+    <div class="row  text-center  mt-5 mb-5">
       <div class="col-sm">
         <h2 class="titulo display-1 my-auto">Tema 3: Manipulación de Datos</h2>
       </div>
     </div>
-    
-    
-    
+
+
+
     <div class="row text-center mx-3 mt-5 mb-5">
       <div class="col-sm">
         <img src="<?php echo $ruta . 'assets/mani.jfif'; ?>" alt="Manipulación de Datos">
@@ -44,56 +44,53 @@ session_start();
         <p class="titulo display-1 my-auto" style="font-size: 40px;">Bienvenidos al tercer tema de nuestro curso de Ciencia de Datos: la Manipulación de Datos. En este módulo, aprenderemos cómo trabajar con conjuntos de datos de manera efectiva utilizando Python y sus bibliotecas especializadas.</p>
       </div>
     </div>
- </div>
-  
+  </div>
 
+  <div class="container">
     <div class="row mx-3 mb-3">
       <div class="col-md-6 d-flex ">
         <p class="my-auto justify-text text-start titulo" style="font-size: 30px; ">Introducción a la Manipulación de Datos </p>
       </div>
       <div class="col-md-6">
-        
+
       </div>
     </div>
-     
+
 
     <div class="row mx-3 mb-5">
-        <p class="my-auto justify-text text-white" style="font-size: 25px;">La manipulación de datos es una parte fundamental en el proceso de análisis y modelado de datos. Antes de poder realizar cualquier análisis significativo, necesitamos asegurarnos de que nuestros datos estén limpios, estructurados y listos para su procesamiento. En este curso, exploraremos cómo realizar tareas como la carga de datos, la limpieza y el preprocesamiento, utilizando herramientas como Pandas, una de las bibliotecas más populares de Python para manipulación de datos.</p>
+      <p class="my-auto justify-text text-white" style="font-size: 25px;">La manipulación de datos es una parte fundamental en el proceso de análisis y modelado de datos. Antes de poder realizar cualquier análisis significativo, necesitamos asegurarnos de que nuestros datos estén limpios, estructurados y listos para su procesamiento. En este curso, exploraremos cómo realizar tareas como la carga de datos, la limpieza y el preprocesamiento, utilizando herramientas como Pandas, una de las bibliotecas más populares de Python para manipulación de datos.</p>
     </div>
-    
+
     <div class="row mx-3 mb-3">
       <div class="col-md-6 d-flex ">
         <p class="my-auto justify-text text-start titulo" style="font-size: 30px; ">Carga y Escritura de Datos </p>
       </div>
       <div class="col-md-6">
-        
+
       </div>
     </div>
-     
+
 
     <div class="row mx-3 mb-5">
-        <p class="my-auto justify-text text-white" style="font-size: 25px;">El primer paso para trabajar con datos es cargarlos en nuestro entorno de trabajo. Aprenderemos cómo cargar datos desde diferentes fuentes, como archivos CSV, Excel, JSON y bases de datos, utilizando las funciones proporcionadas por Pandas. Además, exploraremos cómo escribir datos procesados de vuelta a diferentes formatos para su posterior uso o distribución.</p>
-        
+      <p class="my-auto justify-text text-white" style="font-size: 25px;">El primer paso para trabajar con datos es cargarlos en nuestro entorno de trabajo. Aprenderemos cómo cargar datos desde diferentes fuentes, como archivos CSV, Excel, JSON y bases de datos, utilizando las funciones proporcionadas por Pandas. Además, exploraremos cómo escribir datos procesados de vuelta a diferentes formatos para su posterior uso o distribución.</p>
+
     </div>
-    
+
     <div class="row mx-3 mb-3">
       <div class="col-md-6 d-flex ">
         <p class="my-auto justify-text text-start titulo" style="font-size: 30px; ">Limpieza y Preprocesamiento de Datos</p>
       </div>
       <div class="col-md-6">
-        
+
       </div>
     </div>
-     
+
 
     <div class="row mx-3 mb-5">
-        <p class="my-auto justify-text text-white" style="font-size: 25px;">Los datos del mundo real suelen ser imperfectos y pueden contener errores, valores faltantes o duplicados. En este curso, aprenderemos técnicas para limpiar y preprocesar nuestros datos, incluyendo la eliminación de valores atípicos, la imputación de valores faltantes y la normalización de datos para asegurar su calidad y coherencia.</p>
-        
-    
-    
-
-    <!-- Modal -->
+      <p class="my-auto justify-text text-white" style="font-size: 25px;">Los datos del mundo real suelen ser imperfectos y pueden contener errores, valores faltantes o duplicados. En este curso, aprenderemos técnicas para limpiar y preprocesar nuestros datos, incluyendo la eliminación de valores atípicos, la imputación de valores faltantes y la normalización de datos para asegurar su calidad y coherencia.</p>
+    </div>
   </div>
+
   <?php
   require($ruta .  'layouts/footer.php');
   ?>
