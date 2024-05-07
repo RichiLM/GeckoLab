@@ -105,7 +105,7 @@ session_start();
                         <li class="Cuerpo-texto">Librerías populares de visualización en Python (Matplotlib, Seaborn).</li>
                         <br>
                         <li class="Cuerpo-texto">Personalización y diseño de gráficos.</li>
-                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
+                        <a href="Temario/visua.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
