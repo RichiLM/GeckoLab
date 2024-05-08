@@ -111,27 +111,7 @@ session_start();
             </div>
         </div>
 
-        <!-- Quinto título -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingCinco">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseCinco" aria-expanded="true" aria-controls="panelsStayOpen-collapseCinco">
-                    Estadística Descriptiva
-                </button>
-            </h2>
-            <div id="panelsStayOpen-collapseCinco" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingCinco">
-                <div class="accordion-body Cuerpo-texto">
-                    <ul class="list-style-type: square;">
-                        <li class="Cuerpo-texto">Medidas de tendencia central y dispersión.</li>
-                        <br>
-                        <li class="Cuerpo-texto">Análisis exploratorio de datos.</li>
-                        <br>
-                        <li class="Cuerpo-texto">Correlación y covarianza.</li>
-                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
+       
         <!-- Sexto título -->
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingSeis">
@@ -147,7 +127,7 @@ session_start();
                         <li class="Cuerpo-texto">Algoritmos de clasificación y regresión.</li>
                         <br>
                         <li class="Cuerpo-texto">Evaluación de modelos y selección de características.</li>
-                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
+                        <a href="../components/Temario/ml.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
@@ -168,51 +148,14 @@ session_start();
                         <li class="Cuerpo-texto">Bibliotecas de Deep Learning (TensorFlow, Keras, PyTorch).</li>
                         <br>
                         <li class="Cuerpo-texto">Aplicaciones de Deep Learning en visión por computadora, procesamiento de lenguaje natural, y más.</li>
-                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
+                        <a href="../components/Temario/dl.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Octavo título -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingOcho">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOcho" aria-expanded="true" aria-controls="panelsStayOpen-collapseOcho">
-                    Proyecto Final
-                </button>
-            </h2>
-            <div id="panelsStayOpen-collapseOcho" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOcho">
-                <div class="accordion-body Cuerpo-texto">
-                    <ul class="list-style-type: square;">
-                        <li class="Cuerpo-texto">Desarrollo de un proyecto de ciencia de datos desde la adquisición de datos hasta la implementación del modelo.</li>
-                        <br>
-                        <li class="Cuerpo-texto">Presentación de resultados y conclusiones.</li>
-                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Noveno título -->
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingNueve">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNueve" aria-expanded="true" aria-controls="panelsStayOpen-collapseNueve">
-                    Ética y Privacidad en Ciencia de Datos
-                </button>
-            </h2>
-            <div id="panelsStayOpen-collapseNueve" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingNueve">
-                <div class="accordion-body Cuerpo-texto">
-                    <ul class="list-style-type: square;">
-                        <li class="Cuerpo-texto">Consideraciones éticas en la recopilación y uso de datos.</li>
-                        <br>
-                        <li class="Cuerpo-texto">Protección de la privacidad de los usuarios.</li>
-                        <br>
-                        <li class="Cuerpo-texto">Responsabilidad y transparencia en la toma de decisiones basada en datos.</li>
-                        <a href="#" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      
+        
     </div>
 </div>
 

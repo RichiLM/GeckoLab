@@ -87,7 +87,7 @@
                             <a href="#!" class="text-white">Cursos</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Ayuda</a>
+                            <a href="https://geckogg.000webhostapp.com/" class="text-white">Gecko Gaming</a>
                         </p>
                     </div>
                     <!-- Grid column -->
