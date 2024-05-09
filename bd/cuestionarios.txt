@@ -1,0 +1,28 @@
+CREATE TABLE tema (
+    id_tema integer not null auto_increment primary key,
+    nombre_tema varchar(100) not null
+) engine = innodb;
+
+CREATE TABLE pregunta (
+    id_pregunta integer not null,
+    id_tema integer not null,
+    foreign key (id_tema) references tema (id_tema),
+    primary key (id_pregunta, id_tema),
+    nombre_tema varchar(100) not null
+) engine = innodb;
+
+CREATE TABLE pregunta_opmultiple (
+    id_pregunta integer not null primary key,
+    foreign key (id_pregunta) references pregunta (id_pregunta),
+    respuesta_correcta varchar (200) not null,
+    respuesta_incorrecta1 varchar (200) not null,
+    respuesta_incorrecta2 varchar (200) not null,
+    respuesta_incorrecta3 varchar (200) not null
+) engine = innodb;
+
+CREATE TABLE pregunta_verd_fal (
+    id_pregunta integer not null primary key,
+    foreign key (id_pregunta) references pregunta (id_pregunta),
+    respuesta_correcta varchar (200) not null,
+    respuesta_incorrecta varchar (200) not null
+) engine = innodb;

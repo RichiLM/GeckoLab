@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-04-2024 a las 03:55:51
+-- Tiempo de generación: 09-05-2024 a las 08:13:21
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `usuario` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `direccion` varchar(50) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
   `telefono` varchar(10) NOT NULL,
-  `email` varchar(25) NOT NULL
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -41,7 +41,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `direccion`, `telefono`, `email`) VALUES
-(1, 'BR105', '$2y$10$yBXPtsz9FDuP/RVU5pGDZ.EJdRP9rQzCYVSxkLmjzGt', 'nose', '7896789689', 'anonimoalguien677@gmail.c');
+(1, 'BR105', '$2y$10$yBXPtsz9FDuP/RVU5pGDZ.EJdRP9rQzCYVSxkLmjzGt', 'nose', '7896789689', 'anonimoalguien677@gmail.c'),
+(2, 'richilm', '$2y$10$qgJIUvxWechEWJoEdY1X9Oi61h9yXNl9mI3AaOWeAP4VYS9hbltOu', 'Cuautitlan', '5522132454', 'fanwindygirk.rlom@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -61,7 +62,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
