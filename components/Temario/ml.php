@@ -3,6 +3,7 @@
 $ruta = '../../';
 session_start();
 
+if(isset($_SESSION["usuario"])){
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -150,3 +151,9 @@ session_start();
 </body>
 
 </html>
+<?php
+} else {
+  header("Location: ../CrearCuenta.php");
+  exit;
+}
+?>

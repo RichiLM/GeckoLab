@@ -18,31 +18,31 @@
                 <li class="nav-item">
                     <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/nosotros.php'; ?>">Sobre Nosotros</a>
                 </li>
-                <li class="nav-item">
-                    <!--<button class="nav-link active" style="color: rgb(18, 168, 255); font-size: 22px;" aria-current="page" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">Perfil</button>-->
-                    <?php
-                    if (isset($_SESSION['usuario'])) {
-                    ?>
-                        <a class="nav-link active" style="color: rgb(18, 168, 255); font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/Perfil.php'; ?>">Perfil</a>
-                    <?php
-                    } else {
-                    ?>
-                        <a class="nav-link active" style="color: rgb(18, 168, 255); font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/CrearCuenta.php'; ?>">Perfil</a>
-                    <?php
-                    }
-                    ?>
-
-                </li>
-                <li>
-                    <?php
-                    if (isset($_SESSION['usuario'])) {
-                    ?>
-                        <form action="<?php echo $ruta . 'components/cerrarSesion.php'; ?>">
-                            <input class="btn btn-outline-danger" style="font-size: 20px;" type="submit" name="cerrarS" value="Cerrar Sesión">
-                        </form>
-                    <?php
-                    }
-                    ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(18, 168, 255); font-size: 22px;">
+                        Perfil
+                    </a>
+                    <ul class="dropdown-menu">
+                        <?php
+                        if (isset($_SESSION['usuario'])) {
+                        ?>
+                            <li><a class="dropdown-item" aria-current="page" href="<?php echo $ruta . 'components/Perfil.php'; ?>">Mi perfil</a></li>
+                        <?php
+                        } else {
+                        ?>
+                            <li><a class="dropdown-item" aria-current="page" href="<?php echo $ruta . 'components/crearCuenta.php'; ?>">Mi perfil</a></li>
+                        <?php
+                        }
+                        ?>
+                        <li><a class="dropdown-item" aria-current="page" href="<?php echo $ruta . 'components/historial.php'; ?>">Mi progreso</a></li>
+                        <?php
+                        if (isset($_SESSION['usuario'])) {
+                        ?>
+                            <li><a class="dropdown-item" aria-current="page" href="<?php echo $ruta . 'components/cerrarSesion.php'; ?>">Cerrar sesión</a></li>
+                        <?php
+                        }
+                        ?>
+                    </ul>
                 </li>
             </ul>
         </div>
