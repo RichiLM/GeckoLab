@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg" style="background-color: black;">
     <div class="container-fluid" style="background-color: black;">
         <a href="<?php echo $ruta . 'index.php'; ?>">
-            <img class="img-fluid mx-3" src="<?php echo $ruta . 'assets/Logos/logo.png'; ?>" alt="logo" width="50px">
+            <img class="img-fluid mx-3" src="<?php echo $ruta . 'assets/Logos/icono1.png'; ?>" alt="logo" width="50px">
         </a>
         <a class="navbar-brand" style="color: rgb(18, 168, 255); font-size: 27px;" href="<?php echo $ruta . 'index.php'; ?>">GECKO-LAB</a>
         <button class="navbar-toggler" style="background-color: rgb(18, 168, 255);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -3,17 +3,12 @@ CREATE TABLE tema (
     nombre_tema varchar(100) not null
 ) engine = innodb;
 
-CREATE TABLE pregunta (
+CREATE TABLE pregunta_opmultiple (
     id_pregunta integer not null,
     id_tema integer not null,
     foreign key (id_tema) references tema (id_tema),
     primary key (id_pregunta, id_tema),
-    nombre_tema varchar(100) not null
-) engine = innodb;
-
-CREATE TABLE pregunta_opmultiple (
-    id_pregunta integer not null primary key,
-    foreign key (id_pregunta) references pregunta (id_pregunta),
+    pregunta varchar(250) not null,
     respuesta_correcta varchar (200) not null,
     respuesta_incorrecta1 varchar (200) not null,
     respuesta_incorrecta2 varchar (200) not null,
@@ -21,8 +16,15 @@ CREATE TABLE pregunta_opmultiple (
 ) engine = innodb;
 
 CREATE TABLE pregunta_verd_fal (
-    id_pregunta integer not null primary key,
-    foreign key (id_pregunta) references pregunta (id_pregunta),
-    respuesta_correcta varchar (200) not null,
-    respuesta_incorrecta varchar (200) not null
+    id_pregunta integer not null,
+    id_tema integer not null,
+    foreign key (id_tema) references tema (id_tema),
+    primary key (id_pregunta, id_tema),
+    pregunta varchar(250) not null,
+    respuesta_correcta varchar (20) not null,
+    respuesta_incorrecta varchar (20) not null
 ) engine = innodb;
+
+DROP TABLE pregunta_verd_fal;
+DROP TABLE pregunta_opmultiple;
+DROP TABLE tema;
