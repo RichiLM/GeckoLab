@@ -3,6 +3,12 @@
 $ruta = '../../';
 session_start();
 
+if (isset($_POST["test"])) {
+  $_SESSION["tema"] = $_POST["temaN"];
+  header('Location: ../Evaluacion/test.php');
+  exit();
+}
+
 if(isset($_SESSION["usuario"])){
 
 ?>
@@ -117,12 +123,20 @@ if(isset($_SESSION["usuario"])){
     <div class="row mx-3 mb-5">
       <p class="my-auto justify-text text-white" style="font-size: 25px;">En resumen, el Aprendizaje Profundo es una técnica poderosa que ha revolucionado muchos campos en la ciencia de datos. En este tema, exploraremos los fundamentos de las redes neuronales artificiales, las aplicaciones del aprendizaje profundo y cómo implementar modelos utilizando las bibliotecas de Python más populares. Prepárense para sumergirse en un viaje emocionante hacia el corazón de la inteligencia artificial.</p>
     </div>
-  </div>
-
-
-
-
-  <!-- Modal -->
+    <div class="row text-center">
+        <div class="col-sm-12">
+          <p class="titulo fw-bold" style="font-size: 38px;">Ponte a prueba!</p>
+        </div>
+        <div class="col-sm-12">
+          <p class="text-white" style="font-size: 25px;">Realiza el primer cuestionario de esta unidad para evaluar tu aprendizaje</p>
+        </div>
+        <div class="col-sm-12">
+          <form method="post">
+            <input type="hidden" value="6" name="temaN">
+            <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" name="test">Contestar Test</button>
+          </form>
+        </div>
+      </div>
   </div>
   <?php
   require($ruta .  'layouts/footer.php');

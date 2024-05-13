@@ -3,6 +3,12 @@
 $ruta = '../../';
 session_start();
 
+if (isset($_POST["test"])) {
+  $_SESSION["tema"] = $_POST["temaN"];
+  header('Location: ../Evaluacion/test.php');
+  exit();
+}
+
 if(isset($_SESSION["usuario"])){
 ?>
 <!DOCTYPE html>
@@ -137,6 +143,20 @@ if(isset($_SESSION["usuario"])){
       <p class="my-auto justify-text text-white" style="font-size: 25px;">Una de las ventajas de trabajar con Python para la visualización de datos es la capacidad de personalizar nuestros gráficos según nuestras necesidades y preferencias. En este curso, aprenderemos a personalizar colores, estilos de línea, etiquetas de ejes y más para crear visualizaciones que sean claras y estéticamente agradables.</p>
 
     </div>
+    <div class="row text-center">
+        <div class="col-sm-12">
+          <p class="titulo fw-bold" style="font-size: 38px;">Ponte a prueba!</p>
+        </div>
+        <div class="col-sm-12">
+          <p class="text-white" style="font-size: 25px;">Realiza el cuestionario de esta unidad para evaluar tu aprendizaje</p>
+        </div>
+        <div class="col-sm-12">
+          <form method="post">
+            <input type="hidden" value="4" name="temaN">
+            <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" name="test">Contestar Test</button>
+          </form>
+        </div>
+      </div>
   </div>
 
   <?php

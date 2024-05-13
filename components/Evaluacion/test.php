@@ -5,7 +5,7 @@ session_start();
 require '../conexion.php';
 $conexion = conexion();
 
-$tema = 1;
+$tema = $_SESSION["tema"];
 
 $preguntasMult = "SELECT * FROM pregunta_opmultiple WHERE id_tema = '$tema'";
 $queryMult = mysqli_query($conexion, $preguntasMult);
@@ -13,7 +13,12 @@ $queryMult = mysqli_query($conexion, $preguntasMult);
 $preguntasTF = "SELECT * FROM pregunta_verd_fal WHERE id_tema = '$tema'";
 $queryTF = mysqli_query($conexion, $preguntasTF);
 
-if (isset($_SESSION["usuario"])) {
+if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
+    $idTema = $_SESSION["tema"];
+    $traerTema = "SELECT * FROM tema WHERE id_tema ='$idTema'";
+    $queryTema = mysqli_query($conexion, $traerTema);
+    $fetchTema = mysqli_fetch_assoc($queryTema);
+    $nombreTema = $fetchTema["nombre_tema"];
 ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -38,7 +43,7 @@ if (isset($_SESSION["usuario"])) {
         <div class="container">
             <div class="row  text-center  mt-5 mb-5">
                 <div class="col-sm">
-                    <h2 class="titulo display-1 my-auto">Test tema 1: Introducción a la Ciencia de Datos</h2>
+                    <h2 class="titulo display-1 my-auto">Test tema <?php echo $idTema .': '. $nombreTema; ?></h2>
                 </div>
             </div>
 
@@ -50,7 +55,7 @@ if (isset($_SESSION["usuario"])) {
 
             <div class="row text-center mx-3 my-5">
                 <div class="col-sm">
-                    <p class="titulo my-auto" style="font-size: 28px;">¡Bienvenido al primer test de nuestro curso de Ciencia de Datos! <br> Por favor contesta las siguientes preguntas sobre el tema 1: Introducción a la Ciencia de Datos.</p>
+                    <p class="titulo my-auto" style="font-size: 28px;">¡Bienvenido al test número <?php echo $idTema; ?> de nuestro curso de Ciencia de Datos! <br> Por favor contesta las siguientes preguntas sobre el tema <?php echo $idTema .': '. $nombreTema; ?>.</p>
                 </div>
             </div>
 

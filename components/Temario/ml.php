@@ -3,6 +3,12 @@
 $ruta = '../../';
 session_start();
 
+if (isset($_POST["test"])) {
+  $_SESSION["tema"] = $_POST["temaN"];
+  header('Location: ../Evaluacion/test.php');
+  exit();
+}
+
 if(isset($_SESSION["usuario"])){
 ?>
 <!DOCTYPE html>
@@ -136,6 +142,21 @@ if(isset($_SESSION["usuario"])){
       <p class="my-auto justify-text text-white" style="font-size: 25px;">En resumen, el Aprendizaje Automático es una poderosa herramienta que permite a las máquinas aprender de los datos y realizar tareas complejas sin una programación explícita. En este tema, hemos explorado los conceptos básicos, los algoritmos principales, la evaluación de modelos, la selección de características y las aplicaciones del aprendizaje automático en el mundo real. En las próximas secciones, profundizaremos en casos de estudio y ejemplos prácticos para consolidar estos conceptos y habilidades.</p>
       
     </div>
+
+    <div class="row text-center">
+        <div class="col-sm-12">
+          <p class="titulo fw-bold" style="font-size: 38px;">Ponte a prueba!</p>
+        </div>
+        <div class="col-sm-12">
+          <p class="text-white" style="font-size: 25px;">Realiza el cuestionario de esta unidad para evaluar tu aprendizaje</p>
+        </div>
+        <div class="col-sm-12">
+          <form method="post">
+            <input type="hidden" value="5" name="temaN">
+            <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" name="test">Contestar Test</button>
+          </form>
+        </div>
+      </div>
     
   </div>
 

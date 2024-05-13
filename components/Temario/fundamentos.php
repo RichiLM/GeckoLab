@@ -3,6 +3,12 @@
 $ruta = '../../';
 session_start();
 
+if (isset($_POST["test"])) {
+  $_SESSION["tema"] = $_POST["temaN"];
+  header('Location: ../Evaluacion/test.php');
+  exit();
+}
+
 if(isset($_SESSION["usuario"])){
 ?>
 <!DOCTYPE html>
@@ -109,12 +115,21 @@ if(isset($_SESSION["usuario"])){
 
       </ul>
     </div>
-  </div>
 
-
-
-
-  <!-- Modal -->
+    <div class="row text-center">
+        <div class="col-sm-12">
+          <p class="titulo fw-bold" style="font-size: 38px;">Ponte a prueba!</p>
+        </div>
+        <div class="col-sm-12">
+          <p class="text-white" style="font-size: 25px;">Realiza el cuestionario de esta unidad para evaluar tu aprendizaje</p>
+        </div>
+        <div class="col-sm-12">
+          <form method="post">
+            <input type="hidden" value="2" name="temaN">
+            <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" name="test">Contestar Test</button>
+          </form>
+        </div>
+      </div>
   </div>
   <?php
   require($ruta .  'layouts/footer.php');

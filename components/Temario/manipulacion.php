@@ -3,6 +3,12 @@
 $ruta = '../../';
 session_start();
 
+if (isset($_POST["test"])) {
+  $_SESSION["tema"] = $_POST["temaN"];
+  header('Location: ../Evaluacion/test.php');
+  exit();
+}
+
 if(isset($_SESSION["usuario"])){
 ?>
 <!DOCTYPE html>
@@ -90,6 +96,20 @@ if(isset($_SESSION["usuario"])){
     <div class="row mx-3 mb-5">
       <p class="my-auto justify-text text-white" style="font-size: 25px;">Los datos del mundo real suelen ser imperfectos y pueden contener errores, valores faltantes o duplicados. En este curso, aprenderemos técnicas para limpiar y preprocesar nuestros datos, incluyendo la eliminación de valores atípicos, la imputación de valores faltantes y la normalización de datos para asegurar su calidad y coherencia.</p>
     </div>
+    <div class="row text-center">
+        <div class="col-sm-12">
+          <p class="titulo fw-bold" style="font-size: 38px;">Ponte a prueba!</p>
+        </div>
+        <div class="col-sm-12">
+          <p class="text-white" style="font-size: 25px;">Realiza el cuestionario de esta unidad para evaluar tu aprendizaje</p>
+        </div>
+        <div class="col-sm-12">
+          <form method="post">
+            <input type="hidden" value="3" name="temaN">
+            <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" name="test">Contestar Test</button>
+          </form>
+        </div>
+      </div>
   </div>
 
   <?php
