@@ -26,7 +26,7 @@ session_start();
   <div class="container">
     <div class="row  text-center  mt-5 mb-5">
       <div class="col-sm">
-        
+
         <h2 class="titulo display-1 my-auto">GECKO-LAB</h2>
       </div>
     </div>
@@ -42,75 +42,68 @@ session_start();
         <p class="titulo display-1 my-auto" style="font-size: 40px;">Una marca de Grumpy Gecko Company</p>
       </div>
     </div>
-    
+
     <div class="container">
- 
-<div class="container my-5">
-  <div class="row">
-    <div class="col-md-6">
-      <img src="../assets/Logos/GL%201.png" class="img-fluid" alt="Gecko-Lab Logo">
-    </div>
-    <div class="col-md-6 d-flex align-items-center justify-content-center">
-      <div>
-        <h2 class="titulo display-1" style="font-size: 60px;">¿Quiénes Somos?</h2>
-        <br>
-        <p class="justify-text text-white" style="font-size: 25px;">En Gecko-Lab, nos apasiona impulsar el aprendizaje y la innovación en el campo de la ciencia de datos. Somos un equipo diverso de profesionales dedicados, comprometidos a proporcionar una experiencia educativa excepcional a nuestros estudiantes.</p>
+
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="../assets/Logos/GL%201.png" class="img-fluid" alt="Gecko-Lab Logo">
+          </div>
+          <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div>
+              <h2 class="titulo display-1" style="font-size: 60px;">¿Quiénes Somos?</h2>
+              <br>
+              <p class="justify-text text-white" style="font-size: 25px;">En Gecko-Lab, nos apasiona impulsar el aprendizaje y la innovación en el campo de la ciencia de datos. Somos un equipo diverso de profesionales dedicados, comprometidos a proporcionar una experiencia educativa excepcional a nuestros estudiantes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div>
+              <h2 class="titulo display-1" style="font-size: 60px;">Nuestra Misión</h2>
+              <br>
+              <p class="justify-text text-white" style="font-size: 25px;">En Gecko-Lab, nuestra misión es proporcionarte las habilidades y el conocimiento necesarios para prosperar en el campo de la ciencia de datos. Creemos en el poder transformador de los datos y nos esforzamos por capacitar a individuos y organizaciones para que utilicen esta herramienta poderosa de manera efectiva.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="../assets/tec2.jpg" class="img-fluid " alt="Gecko-Lab Logo">
+          </div>
+        </div>
+      </div>
+
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="../assets/chat.png" class="img-fluid" alt="Gecko-Lab Logo">
+          </div>
+          <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div>
+              <h2 class="titulo display-1" style="font-size: 60px;">¿Qué Nos Distingue?</h2>
+              <br>
+              <p class="justify-text text-white" style="font-size: 25px;">En Gecko-Lab, nos destacamos por nuestra combinación única de experiencia técnica, enfoque práctico y compromiso con la excelencia. Nuestro equipo de expertos en ciencia de datos está dedicado a brindarte una experiencia de aprendizaje enriquecedora y personalizada, diseñada para impulsar tu éxito.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row mx-3 mb-3 justify-content-center">
+          <div class="col-md-6">
+            <p class="my-auto justify-text text-center titulo" style="font-size: 40px;">Únete a la Comunidad de Gecko-Lab</p>
+          </div>
+        </div>
+
+        <div class="row mx-3 mb-5">
+          <div class="col-md-12">
+            <p class="my-auto justify-text text-white" style="font-size: 25px;">Ya sea que estés comenzando tu viaje en la ciencia de datos o buscando llevar tus habilidades al siguiente nivel, te damos la bienvenida a unirte a la comunidad de Gecko-Lab. ¡Juntos, podemos explorar el poder transformador de los datos y hacer un impacto positivo en el mundo!</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-    <div class="container my-5">
-  <div class="row">
-    <div class="col-md-6 d-flex align-items-center justify-content-center">
-      <div>
-        <h2 class="titulo display-1" style="font-size: 60px;">Nuestra Misión</h2>
-        <br>
-        <p class="justify-text text-white" style="font-size: 25px;">En Gecko-Lab, nuestra misión es proporcionarte las habilidades y el conocimiento necesarios para prosperar en el campo de la ciencia de datos. Creemos en el poder transformador de los datos y nos esforzamos por capacitar a individuos y organizaciones para que utilicen esta herramienta poderosa de manera efectiva.</p>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <img src="../assets/tec2.jpg" class="img-fluid " alt="Gecko-Lab Logo">
-    </div>
-  </div>
-</div>
-
-    <div class="container my-5">
-  <div class="row">
-    <div class="col-md-6">
-      <img src="../assets/chat.png" class="img-fluid" alt="Gecko-Lab Logo">
-    </div>
-    <div class="col-md-6 d-flex align-items-center justify-content-center">
-      <div>
-        <h2 class="titulo display-1" style="font-size: 60px;">¿Qué Nos Distingue?</h2>
-        <br>
-        <p class="justify-text text-white" style="font-size: 25px;">En Gecko-Lab, nos destacamos por nuestra combinación única de experiencia técnica, enfoque práctico y compromiso con la excelencia. Nuestro equipo de expertos en ciencia de datos está dedicado a brindarte una experiencia de aprendizaje enriquecedora y personalizada, diseñada para impulsar tu éxito.</p>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    <div class="container">
-  <div class="row mx-3 mb-3 justify-content-center">
-    <div class="col-md-6">
-      <p class="my-auto justify-text text-center titulo" style="font-size: 40px;">Únete a la Comunidad de Gecko-Lab</p>
-    </div>
-  </div>
-
-  <div class="row mx-3 mb-5">
-    <div class="col-md-12">
-      <p class="my-auto justify-text text-white" style="font-size: 25px;">Ya sea que estés comenzando tu viaje en la ciencia de datos o buscando llevar tus habilidades al siguiente nivel, te damos la bienvenida a unirte a la comunidad de Gecko-Lab. ¡Juntos, podemos explorar el poder transformador de los datos y hacer un impacto positivo en el mundo!</p>
-    </div>
-  </div>
-</div>
-
-
-    
-
-   
-
-      
-    <!-- Modal -->
   </div>
   <?php
   require($ruta .  'layouts/footer.php');
