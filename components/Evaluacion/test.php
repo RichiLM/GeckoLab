@@ -9,9 +9,13 @@ $tema = $_SESSION["tema"];
 
 $preguntasMult = "SELECT * FROM pregunta_opmultiple WHERE id_tema = '$tema'";
 $queryMult = mysqli_query($conexion, $preguntasMult);
+$cPreguntasMult = mysqli_num_rows($queryMult);
 
 $preguntasTF = "SELECT * FROM pregunta_verd_fal WHERE id_tema = '$tema'";
 $queryTF = mysqli_query($conexion, $preguntasTF);
+$cPreguntasTF = mysqli_num_rows($queryTF);
+
+$preguntasTotales = $cPreguntasMult + $cPreguntasTF;
 
 if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
     $idTema = $_SESSION["tema"];
@@ -62,14 +66,14 @@ if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
                 <div class="row">
                     <?php
                     $contador = 1;
-                    if (mysqli_num_rows($queryMult) > 0 or mysqli_num_rows($queryTF) > 0) {
+                    if ($cPreguntasMult > 0 or $cPreguntasTF > 0) {
                     ?>
 
                         <?php
-                        if (mysqli_num_rows($queryMult) > 0) {
+                        if ($cPreguntasMult > 0) {
                             while ($preguntaOp = mysqli_fetch_assoc($queryMult)) {
                                 $orden = rand(1, 4);
-
+                                $idPregunta = $preguntaOp["id_pregunta"];
                                 $preguntaMtexto = $preguntaOp["pregunta"];
                                 $respuestaMcorrecta = $preguntaOp["respuesta_correcta"];
                                 $respuestaMincorrecta1 = $preguntaOp["respuesta_incorrecta1"];
@@ -82,6 +86,7 @@ if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
                                             <h5 class="card-title text-center">Pregunta <?php echo $contador; ?></h5>
                                             <p class="card-text"><?php echo $preguntaMtexto; ?></p>
                                         </div>
+                                        <input type="hidden" value="<?php echo $idPregunta; ?>" name="numPregunta_<?php echo $contador; ?>">
                                         <ul class="list-group list-group-flush p-3" style="background-color: rgb(18, 168, 255);">
                                             <?php
                                             if ($orden == 1) {
@@ -234,11 +239,11 @@ if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
                             }
                         }
 
-                        if (mysqli_num_rows($queryTF) > 0) {
+                        if ($cPreguntasTF > 0) {
                             # WHILE TRUE / FALSE
                             while ($preguntaTF = mysqli_fetch_assoc($queryTF)) {
                                 $orden = rand(1, 2);
-
+                                $idPregunta = $preguntaTF["id_pregunta"];
                                 $preguntaMtexto = $preguntaTF["pregunta"];
                                 $respuestaMcorrecta = $preguntaTF["respuesta_correcta"];
                                 $respuestaMincorrecta = $preguntaTF["respuesta_incorrecta"];
@@ -249,6 +254,7 @@ if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
                                             <h5 class="card-title text-center">Pregunta <?php echo $contador; ?></h5>
                                             <p class="card-text"><?php echo $preguntaMtexto; ?></p>
                                         </div>
+                                        <input type="hidden" value="<?php echo $idPregunta; ?>" name="numPregunta_<?php echo $contador; ?>">
                                         <ul class="list-group list-group-flush p-3" style="background-color: rgb(18, 168, 255);">
                                             <?php
                                             if ($orden == 1) {
@@ -263,7 +269,7 @@ if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
                                                 </li>
                                                 <li>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" required name="respuesta_<?php echo $contador; ?>" id="flexRadioDefault3_<?php echo $contador; ?>" value="<?php echo $respuestaMincorrecta2; ?>">
+                                                        <input class="form-check-input" type="radio" required name="respuesta_<?php echo $contador; ?>" id="flexRadioDefault3_<?php echo $contador; ?>" value="<?php echo $respuestaMincorrecta; ?>">
                                                         <label class="form-check-label" for="flexRadioDefault3_<?php echo $contador; ?>">
                                                             <?php echo $respuestaMincorrecta; ?>
                                                         </label>
@@ -274,7 +280,7 @@ if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
                                             ?>
                                                 <li>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" required name="respuesta_<?php echo $contador; ?>" id="flexRadioDefault3_<?php echo $contador; ?>" value="<?php echo $respuestaMincorrecta2; ?>">
+                                                        <input class="form-check-input" type="radio" required name="respuesta_<?php echo $contador; ?>" id="flexRadioDefault3_<?php echo $contador; ?>" value="<?php echo $respuestaMincorrecta; ?>">
                                                         <label class="form-check-label" for="flexRadioDefault3_<?php echo $contador; ?>">
                                                             <?php echo $respuestaMincorrecta; ?>
                                                         </label>
@@ -299,7 +305,10 @@ if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
                             }
                         }
                         ?>
-                        <input type="hidden" value="<?php echo $idTema; ?>">
+                        <input type="hidden" value="<?php echo $idTema; ?>" name="idTema">
+                        <input type="hidden" value="<?php echo $cPreguntasMult; ?>" name="cantidadPmult">
+                        <input type="hidden" value="<?php echo $cPreguntasTF; ?>" name="cantidadPtf">
+                        <input type="hidden" value="<?php echo $preguntasTotales; ?>" name="cantidadP">
                         <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" type="submit">Enviar Test</button>
 
                     <?php

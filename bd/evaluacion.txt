@@ -1,0 +1,36 @@
+CREATE TABLE calificacion (
+    id_usuario integer not null,
+    id_tema integer not null,
+    foreign key (id_usuario) references usuarios (id),
+    foreign key (id_tema) references tema (id_tema),
+    primary key (id_usuario, id_tema),
+    puntuacion decimal (4, 2) not null
+) engine = innodb;
+
+CREATE TABLE evaluacion_multiple (
+    id_usuario integer not null,
+    id_pregunta integer not null,
+    id_tema integer not null,
+    foreign key (id_usuario) references usuarios (id),
+    foreign key (id_pregunta) references pregunta_opmultiple (id_pregunta),
+    foreign key (id_tema) references tema (id_tema),
+    primary key (id_usuario, id_pregunta, id_tema),
+    respuesta_usuario varchar (200) not null,
+    puntaje boolean not null
+) engine = innodb;
+
+CREATE TABLE evaluacion_verdadero_fal (
+    id_usuario integer not null,
+    id_pregunta integer not null,
+    id_tema integer not null,
+    foreign key (id_usuario) references usuarios (id),
+    foreign key (id_pregunta) references pregunta_verd_fal (id_pregunta),
+    foreign key (id_tema) references tema (id_tema),
+    primary key (id_usuario, id_pregunta, id_tema),
+    respuesta_usuario varchar (200) not null,
+    puntaje boolean not null
+) engine = innodb;
+
+DELETE FROM calificacion;
+DELETE FROM evaluacion_verdadero_fal;
+DELETE FROM evaluacion_multiple;
