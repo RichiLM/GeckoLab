@@ -1,5 +1,5 @@
 <?php
-
+// Este codigo solo Jayme Ernesto Lin lo entiende
 session_start();
 require '../conexion.php';
 $conexion = conexion();

@@ -9,7 +9,24 @@ if (isset($_POST["test"])) {
   exit();
 }
 
-if(isset($_SESSION["usuario"])){
+require '../conexion.php';
+$conexion = conexion();
+
+$nombreUsuario = $_SESSION["usuario"];
+$traerIdUsuario = "SELECT * FROM usuarios WHERE usuario = '$nombreUsuario'";
+$queryUsuario = mysqli_query($conexion, $traerIdUsuario);
+$datosUsuario = mysqli_fetch_assoc($queryUsuario);
+$idUsuario = $datosUsuario["id"];
+
+$verCurso = "SELECT * FROM calificacion WHERE id_tema = 3 AND id_usuario = '$idUsuario'";
+$ejectCurso = mysqli_query($conexion, $verCurso);
+$cal;
+if (mysqli_num_rows($ejectCurso) > 0) {
+  $fetchCurso = mysqli_fetch_assoc($ejectCurso);
+  $cal = $fetchCurso["puntuacion"];
+}
+
+if(isset($_SESSION["usuario"]) && mysqli_num_rows($ejectCurso) > 0 && !$cal < 6){
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -153,7 +170,20 @@ if(isset($_SESSION["usuario"])){
         <div class="col-sm-12">
           <form method="post">
             <input type="hidden" value="4" name="temaN">
-            <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" name="test">Contestar Test</button>
+            <?php
+            $verRes = "SELECT * FROM calificacion WHERE id_tema = 4 AND id_usuario = '$idUsuario'";
+            $ResCurso = mysqli_query($conexion, $verRes);
+
+            if (mysqli_num_rows($ResCurso) > 0) {
+            ?>
+              <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" name="test">Reintentar Test</button>
+            <?php
+            } else {
+              ?>
+              <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" name="test">Contestar Test</button>
+            <?php
+            }
+            ?>
           </form>
         </div>
       </div>

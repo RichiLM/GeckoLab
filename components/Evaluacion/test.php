@@ -304,21 +304,25 @@ if (isset($_SESSION["usuario"]) && isset($_SESSION["tema"])) {
                                 $contador += 1;
                             }
                         }
-                        ?>
-                        <input type="hidden" value="<?php echo $idTema; ?>" name="idTema">
-                        <input type="hidden" value="<?php echo $cPreguntasMult; ?>" name="cantidadPmult">
-                        <input type="hidden" value="<?php echo $cPreguntasTF; ?>" name="cantidadPtf">
-                        <input type="hidden" value="<?php echo $preguntasTotales; ?>" name="cantidadP">
-                        <button class="btn fw-bold mt-3" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" type="submit">Enviar Test</button>
-
-                    <?php
                     } else {
-                    ?>
+                        ?>
                         <h2 class="titulo display-1 my-auto text-center">No hay preguntas por contestar</h2>
                     <?php
+                        $botonActivado = 'no';
                     }
                     ?>
                 </div>
+                <input type="hidden" value="<?php echo $idTema; ?>" name="idTema">
+                <input type="hidden" value="<?php echo $cPreguntasMult; ?>" name="cantidadPmult">
+                <input type="hidden" value="<?php echo $cPreguntasTF; ?>" name="cantidadPtf">
+                <input type="hidden" value="<?php echo $preguntasTotales; ?>" name="cantidadP">
+                <?php
+                if (!isset($botonActivado)) {
+                ?>
+                    <button class="btn fw-bold mt-5 d-block mx-auto" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px; max-width: 250px;" type="submit">Enviar Test</button>
+                <?php
+                }
+                ?>
             </form>
 
         </div>

@@ -33,7 +33,7 @@ session_start();
 
     <div class="row  text-center ">
       <div class="col-sm">
-        <img src="assets/cd.avif" alt="">
+        <img class="img-fluid" src="assets/cd.avif" alt="">
       </div>
     </div>
 
