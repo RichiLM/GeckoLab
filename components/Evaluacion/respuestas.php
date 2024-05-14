@@ -20,55 +20,122 @@ if (isset($_POST["idTema"]) && isset($_POST["cantidadPmult"]) && isset($_POST["c
     $idsPreguntas = array();
     $aciertos = 0;
 
-    for ($i = 1; $i <= $cantidadPreg; $i++) {
-        $respuestas[$i] = $_POST["respuesta_$i"];
-        $idsPreguntas[$i] = $_POST["numPregunta_$i"];
-        echo $idsPreguntas[$i] . ' ' .  $respuestas[$i] . ' --- ';
-    }
+    $verRespuestas = "SELECT * FROM calificacion WHERE id_tema = '$idTema' AND id_usuario = '$idUsuario'";
+    $revisarRespuestas = mysqli_query($conexion, $verRespuestas);
 
-    for ($m = 1; $m <= $cantidadPmult; $m++) {
-        $consultaMultiple = "SELECT * FROM pregunta_opmultiple WHERE id_pregunta = '$idsPreguntas[$m]'";
-        $queryMultiple = mysqli_query($conexion, $consultaMultiple);
-
-        $fetchMultiple = mysqli_fetch_assoc($queryMultiple);
-        $respuestaCorrectaM = $fetchMultiple["respuesta_correcta"];
-
-        if ($respuestas[$m] == $respuestaCorrectaM) {
-            $puntaje = true;
-            $aciertos += 1;
-        } else {
-            $puntaje = false;
+    if (!mysqli_num_rows($revisarRespuestas) > 0) {
+        for ($i = 1; $i <= $cantidadPreg; $i++) {
+            $respuestas[$i] = $_POST["respuesta_$i"];
+            $idsPreguntas[$i] = $_POST["numPregunta_$i"];
+            echo $idsPreguntas[$i] . ' ' .  $respuestas[$i] . ' --- ';
         }
 
-        $insertM = "INSERT INTO evaluacion_multiple VALUES ('$idUsuario', '$idsPreguntas[$m]', '$idTema', '$respuestas[$m]', '$puntaje')";
-        mysqli_query($conexion, $insertM);
-    }
+        for ($m = 1; $m <= $cantidadPmult; $m++) {
+            $consultaMultiple = "SELECT * FROM pregunta_opmultiple WHERE id_pregunta = '$idsPreguntas[$m]'";
+            $queryMultiple = mysqli_query($conexion, $consultaMultiple);
 
-    for ($tf = ($cantidadPreg - $cantidadPtf) + 1; $tf <= $cantidadPreg; $tf++) {
-        $consultaTF = "SELECT * FROM pregunta_verd_fal WHERE id_pregunta = '$idsPreguntas[$tf]'";
-        $queryTF = mysqli_query($conexion, $consultaTF);
+            $fetchMultiple = mysqli_fetch_assoc($queryMultiple);
+            $respuestaCorrectaM = $fetchMultiple["respuesta_correcta"];
 
-        $fetchTF = mysqli_fetch_assoc($queryTF);
-        $respuestaCorrectaTF = $fetchTF["respuesta_correcta"];
+            if ($respuestas[$m] == $respuestaCorrectaM) {
+                $puntaje = true;
+                $aciertos += 1;
+            } else {
+                $puntaje = false;
+            }
 
-        if ($respuestas[$tf] == $respuestaCorrectaTF) {
-            $puntaje = true;
-            $aciertos += 1;
-        } else {
-            $puntaje = false;
+            $insertM = "INSERT INTO evaluacion_multiple VALUES ('$idUsuario', '$idsPreguntas[$m]', '$idTema', '$respuestas[$m]', '$puntaje')";
+            mysqli_query($conexion, $insertM);
         }
 
-        $insertTF = "INSERT INTO evaluacion_verdadero_fal VALUES ('$idUsuario', '$idsPreguntas[$tf]', '$idTema', '$respuestas[$tf]', '$puntaje')";
-        mysqli_query($conexion, $insertTF);
+        for ($tf = ($cantidadPreg - $cantidadPtf) + 1; $tf <= $cantidadPreg; $tf++) {
+            $consultaTF = "SELECT * FROM pregunta_verd_fal WHERE id_pregunta = '$idsPreguntas[$tf]'";
+            $queryTF = mysqli_query($conexion, $consultaTF);
+
+            $fetchTF = mysqli_fetch_assoc($queryTF);
+            $respuestaCorrectaTF = $fetchTF["respuesta_correcta"];
+
+            if ($respuestas[$tf] == $respuestaCorrectaTF) {
+                $puntaje = true;
+                $aciertos += 1;
+            } else {
+                $puntaje = false;
+            }
+
+            $insertTF = "INSERT INTO evaluacion_verdadero_fal VALUES ('$idUsuario', '$idsPreguntas[$tf]', '$idTema', '$respuestas[$tf]', '$puntaje')";
+            mysqli_query($conexion, $insertTF);
+        }
+
+        $calificacion = ($aciertos * 10) / $cantidadPreg;
+
+        $insertCal = "INSERT INTO calificacion VALUES ('$idUsuario', '$idTema', '$calificacion')";
+        mysqli_query($conexion, $insertCal);
+    } else {
+        # Si ya existen respuestas
+        for ($i = 1; $i <= $cantidadPreg; $i++) {
+            $respuestas[$i] = $_POST["respuesta_$i"];
+            $idsPreguntas[$i] = $_POST["numPregunta_$i"];
+            echo $idsPreguntas[$i] . ' ' .  $respuestas[$i] . ' --- ';
+        }
+
+        for ($m = 1; $m <= $cantidadPmult; $m++) {
+            $consultaMultiple = "SELECT * FROM pregunta_opmultiple WHERE id_pregunta = '$idsPreguntas[$m]'";
+            $queryMultiple = mysqli_query($conexion, $consultaMultiple);
+
+            $fetchMultiple = mysqli_fetch_assoc($queryMultiple);
+            $respuestaCorrectaM = $fetchMultiple["respuesta_correcta"];
+
+            if ($respuestas[$m] == $respuestaCorrectaM) {
+                $puntaje = true;
+                $aciertos += 1;
+            } else {
+                $puntaje = false;
+            }
+
+            $existePreg = "SELECT * FROM evaluacion_multiple WHERE id_pregunta = $idsPreguntas[$m]";
+            $verExiste = mysqli_query($conexion, $existePreg);
+
+            if (mysqli_num_rows($verExiste) > 0) {
+                $updateM = "UPDATE evaluacion_multiple SET respuesta_usuario = '$respuestas[$m]', puntaje = '$puntaje' WHERE id_pregunta = '$idsPreguntas[$m]' AND id_usuario = '$idUsuario' AND id_tema = '$idTema'";
+                mysqli_query($conexion, $updateM);
+            } else {
+                $insertM = "INSERT INTO evaluacion_multiple VALUES ('$idUsuario', '$idsPreguntas[$m]', '$idTema', '$respuestas[$m]', '$puntaje')";
+                mysqli_query($conexion, $insertM);
+            }
+        }
+
+        for ($tf = ($cantidadPreg - $cantidadPtf) + 1; $tf <= $cantidadPreg; $tf++) {
+            $consultaTF = "SELECT * FROM pregunta_verd_fal WHERE id_pregunta = '$idsPreguntas[$tf]'";
+            $queryTF = mysqli_query($conexion, $consultaTF);
+
+            $fetchTF = mysqli_fetch_assoc($queryTF);
+            $respuestaCorrectaTF = $fetchTF["respuesta_correcta"];
+
+            if ($respuestas[$tf] == $respuestaCorrectaTF) {
+                $puntaje = true;
+                $aciertos += 1;
+            } else {
+                $puntaje = false;
+            }
+
+            $existePregTF = "SELECT * FROM evaluacion_verdadero_fal WHERE id_pregunta = $idsPreguntas[$m]";
+            $verExisteTF = mysqli_query($conexion, $existePregTF);
+
+            if (mysqli_num_rows($verExisteTF) > 0) {
+                $updateTF = "UPDATE evaluacion_verdadero_fal SET respuesta_usuario = '$respuestas[$tf]', puntaje = '$puntaje' WHERE id_pregunta = '$idsPreguntas[$tf]' AND id_usuario = '$idUsuario' AND id_tema = '$idTema'";
+                mysqli_query($conexion, $updateTF);
+            } else {
+                $insertTF = "INSERT INTO evaluacion_verdadero_fal VALUES ('$idUsuario', '$idsPreguntas[$tf]', '$idTema', '$respuestas[$tf]', '$puntaje')";
+                mysqli_query($conexion, $insertTF);
+            }
+        }
+
+        $calificacion = ($aciertos * 10) / $cantidadPreg;
+
+        $updateCal = "UPDATE calificacion SET puntuacion = '$calificacion' WHERE id_usuario = '$idUsuario' AND id_tema = '$idTema'";
+        mysqli_query($conexion, $updateCal);
     }
-
-    $calificacion = ($aciertos * 10) / $cantidadPreg;
-
-    $insertCal = "INSERT INTO calificacion VALUES ('$idUsuario', '$idTema', '$calificacion')";
-    mysqli_query($conexion, $insertCal);
 } else {
     header('Location: ../curso.php');
     exit();
 }
-
-?>
