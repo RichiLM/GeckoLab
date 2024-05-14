@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2024 a las 03:29:54
+-- Tiempo de generación: 14-05-2024 a las 04:07:31
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,6 +20,65 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `gl`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_usuario` int(11) NOT NULL,
+  `permiso` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `admin`
+--
+
+INSERT INTO `admin` (`id_usuario`, `permiso`) VALUES
+(1, 1),
+(2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calificacion`
+--
+
+CREATE TABLE `calificacion` (
+  `id_usuario` int(11) NOT NULL,
+  `id_tema` int(11) NOT NULL,
+  `puntuacion` decimal(4,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_multiple`
+--
+
+CREATE TABLE `evaluacion_multiple` (
+  `id_usuario` int(11) NOT NULL,
+  `id_pregunta` int(11) NOT NULL,
+  `id_tema` int(11) NOT NULL,
+  `respuesta_usuario` varchar(200) NOT NULL,
+  `puntaje` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_verdadero_fal`
+--
+
+CREATE TABLE `evaluacion_verdadero_fal` (
+  `id_usuario` int(11) NOT NULL,
+  `id_pregunta` int(11) NOT NULL,
+  `id_tema` int(11) NOT NULL,
+  `respuesta_usuario` varchar(200) NOT NULL,
+  `puntaje` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -174,6 +233,35 @@ INSERT INTO `usuarios` (`id`, `usuario`, `password`, `direccion`, `telefono`, `e
 --
 
 --
+-- Indices de la tabla `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
+-- Indices de la tabla `calificacion`
+--
+ALTER TABLE `calificacion`
+  ADD PRIMARY KEY (`id_usuario`,`id_tema`),
+  ADD KEY `id_tema` (`id_tema`);
+
+--
+-- Indices de la tabla `evaluacion_multiple`
+--
+ALTER TABLE `evaluacion_multiple`
+  ADD PRIMARY KEY (`id_usuario`,`id_pregunta`,`id_tema`),
+  ADD KEY `id_pregunta` (`id_pregunta`),
+  ADD KEY `id_tema` (`id_tema`);
+
+--
+-- Indices de la tabla `evaluacion_verdadero_fal`
+--
+ALTER TABLE `evaluacion_verdadero_fal`
+  ADD PRIMARY KEY (`id_usuario`,`id_pregunta`,`id_tema`),
+  ADD KEY `id_pregunta` (`id_pregunta`),
+  ADD KEY `id_tema` (`id_tema`);
+
+--
 -- Indices de la tabla `pregunta_opmultiple`
 --
 ALTER TABLE `pregunta_opmultiple`
@@ -218,6 +306,35 @@ ALTER TABLE `usuarios`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `admin`
+--
+ALTER TABLE `admin`
+  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+
+--
+-- Filtros para la tabla `calificacion`
+--
+ALTER TABLE `calificacion`
+  ADD CONSTRAINT `calificacion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `calificacion_ibfk_2` FOREIGN KEY (`id_tema`) REFERENCES `tema` (`id_tema`);
+
+--
+-- Filtros para la tabla `evaluacion_multiple`
+--
+ALTER TABLE `evaluacion_multiple`
+  ADD CONSTRAINT `evaluacion_multiple_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `evaluacion_multiple_ibfk_2` FOREIGN KEY (`id_pregunta`) REFERENCES `pregunta_opmultiple` (`id_pregunta`),
+  ADD CONSTRAINT `evaluacion_multiple_ibfk_3` FOREIGN KEY (`id_tema`) REFERENCES `tema` (`id_tema`);
+
+--
+-- Filtros para la tabla `evaluacion_verdadero_fal`
+--
+ALTER TABLE `evaluacion_verdadero_fal`
+  ADD CONSTRAINT `evaluacion_verdadero_fal_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `evaluacion_verdadero_fal_ibfk_2` FOREIGN KEY (`id_pregunta`) REFERENCES `pregunta_verd_fal` (`id_pregunta`),
+  ADD CONSTRAINT `evaluacion_verdadero_fal_ibfk_3` FOREIGN KEY (`id_tema`) REFERENCES `tema` (`id_tema`);
 
 --
 -- Filtros para la tabla `pregunta_opmultiple`

@@ -1,0 +1,9 @@
+CREATE TABLE admin (
+    id_usuario integer not null primary key,
+    foreign key (id_usuario) references usuarios (id),
+    permiso boolean not null
+) engine = innodb;
+
+INSERT INTO admin VALUES
+(1, true),
+(2, true);
