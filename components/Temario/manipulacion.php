@@ -59,7 +59,7 @@ if(isset($_SESSION["usuario"]) && mysqli_num_rows($ejectCurso) > 0 && !$cal < 6)
 
     <div class="row text-center mx-3 mt-5 mb-5">
       <div class="col-sm">
-        <img src="<?php echo $ruta . 'assets/mani.jfif'; ?>" alt="Manipulación de Datos">
+        <img class="img-fluid" src="<?php echo $ruta . 'assets/mani.jfif'; ?>" alt="Manipulación de Datos">
       </div>
     </div>
 

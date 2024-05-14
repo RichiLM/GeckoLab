@@ -33,7 +33,7 @@ session_start();
 
     <div class="row  text-center ">
       <div class="col-sm">
-        <img src="assets/cd.avif" alt="">
+        <img class="img-fluid" src="assets/cd.avif" alt="">
       </div>
     </div>
 
@@ -48,7 +48,7 @@ session_start();
       <div class="container my-5">
         <div class="row">
           <div class="col-md-6">
-            <img src="../assets/Logos/GL%201.png" class="img-fluid" alt="Gecko-Lab Logo">
+            <img  src="../assets/Logos/GL%201.png" class="img-fluid" alt="Gecko-Lab Logo">
           </div>
           <div class="col-md-6 d-flex align-items-center justify-content-center">
             <div>

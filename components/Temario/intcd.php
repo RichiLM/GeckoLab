@@ -49,7 +49,7 @@ if (isset($_SESSION["usuario"])) {
       </div>
       <div class="row text-center mx-3 mt-5 mb-5">
         <div class="col-sm">
-          <img src="../../assets/cd.avif" alt="">
+          <img class="img-fluid" src="../../assets/cd.avif" alt="">
         </div>
       </div>
 

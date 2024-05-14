@@ -1,5 +1,6 @@
 <?php
 // Este codigo solo Jayme Ernesto Lin lo entiende
+$ruta = '../../';
 session_start();
 require '../conexion.php';
 $conexion = conexion();
@@ -27,7 +28,6 @@ if (isset($_POST["idTema"]) && isset($_POST["cantidadPmult"]) && isset($_POST["c
         for ($i = 1; $i <= $cantidadPreg; $i++) {
             $respuestas[$i] = $_POST["respuesta_$i"];
             $idsPreguntas[$i] = $_POST["numPregunta_$i"];
-            echo $idsPreguntas[$i] . ' ' .  $respuestas[$i] . ' --- ';
         }
 
         for ($m = 1; $m <= $cantidadPmult; $m++) {
@@ -75,7 +75,6 @@ if (isset($_POST["idTema"]) && isset($_POST["cantidadPmult"]) && isset($_POST["c
         for ($i = 1; $i <= $cantidadPreg; $i++) {
             $respuestas[$i] = $_POST["respuesta_$i"];
             $idsPreguntas[$i] = $_POST["numPregunta_$i"];
-            echo $idsPreguntas[$i] . ' ' .  $respuestas[$i] . ' --- ';
         }
 
         for ($m = 1; $m <= $cantidadPmult; $m++) {
@@ -135,6 +134,56 @@ if (isset($_POST["idTema"]) && isset($_POST["cantidadPmult"]) && isset($_POST["c
         $updateCal = "UPDATE calificacion SET puntuacion = '$calificacion' WHERE id_usuario = '$idUsuario' AND id_tema = '$idTema'";
         mysqli_query($conexion, $updateCal);
     }
+?>
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gecko - Lab</title>
+        <link rel="icon" href="<?php echo $ruta . 'assets/Logos/icono1.png'; ?>" type="image/png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/style.css">
+    </head>
+
+    <body>
+        <?php require($ruta . 'layouts/nav.php'); ?>
+
+
+        <div class="container">
+            <div class="row  text-center  mt-5 mb-5">
+                <div class="col-sm">
+                    <h2 class="titulo display-1 my-auto">Gracias por contestar el test</h2>
+                </div>
+            </div>
+
+            <div class="row text-center mx-3 mt-5 mb-5">
+                <div class="col-sm">
+                    <img class="img-fluid" src="../../assets/progra.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="row text-center mx-3 mt-5 mb-5">
+                <div class="col-sm">
+                    <p class="titulo display-1 my-auto" style="font-size: 40px;">Ahora puedes continuar con tu aprendizaje.</p>
+                    <a href="../curso.php" class="btn fw-bold mt-5 d-block mx-auto" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px; max-width: 200px;">Ver cursos</a>
+                </div>
+            </div>
+        </div>
+
+        <?php
+        require($ruta .  'layouts/footer.php');
+        ?>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+
+    </html>
+<?php
 } else {
     header('Location: ../curso.php');
     exit();

@@ -60,7 +60,7 @@ if(isset($_SESSION["usuario"]) && mysqli_num_rows($ejectCurso) > 0 && !$cal < 6)
 
     <div class="row text-center mx-3 mt-5 mb-5">
       <div class="col-sm">
-        <img src="../../assets/progra.jpg" alt="">
+        <img class="img-fluid" src="../../assets/progra.jpg" alt="">
       </div>
     </div>
 
