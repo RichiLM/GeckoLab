@@ -171,7 +171,7 @@ if (isset($_SESSION["usuario"]) && mysqli_num_rows($ejectCurso) > 0 && !$cal < 6
 
 <?php
 } else {
-  header("Location: ../CrearCuenta.php");
+  header("Location: ../../index.php");
   exit;
 }
 ?>

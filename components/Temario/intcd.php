@@ -168,7 +168,7 @@ if (isset($_SESSION["usuario"])) {
   </html>
 <?php
 } else {
-  header("Location: ../CrearCuenta.php");
+  header("Location: ../../index.php");
   exit;
 }
 ?>
