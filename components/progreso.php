@@ -63,9 +63,22 @@ if (isset($_SESSION["usuario"])) {
                                     </div>
                                     <div class="col-md-6">
                                         <p class="text-white" style="font-size: 20px;"><span class="titulo fw-bold">Preguntas: </span><?php echo $cantidadPreguntas; ?></p>
-                                        <p class="text-white" style="font-size: 20px;"><span class="titulo fw-bold">Resultado: </span><?php echo $calificacion; ?></p>
+                                        <?php
+                                        if ($calificacion < 6) {
+                                        ?>
+                                            <p class="text-danger" style="font-size: 20px;"><span class="titulo fw-bold">Calificación: </span><?php echo $calificacion; ?></p>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <p class="text-success" style="font-size: 20px;"><span class="titulo fw-bold">Calificación: </span><?php echo $calificacion; ?></p>
+                                        <?php
+                                        }
+                                        ?>
                                         <p class="text-white" style="font-size: 20px;"><span class="titulo fw-bold">Fecha: </span><?php echo $fecha; ?></p>
-                                        <button class="btn fw-bold mx-auto" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" type="submit">Ver detalles</button>
+                                        <form action="detallesEvaluacion.php" method="get">
+                                            <input type="hidden" name="id_curso" value="<?php echo $idTema; ?>">
+                                            <button class="btn fw-bold mx-auto" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px;" type="submit">Ver detalles</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div> <!-- .curso -->

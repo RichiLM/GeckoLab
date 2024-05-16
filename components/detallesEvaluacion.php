@@ -5,7 +5,26 @@ session_start();
 require 'conexion.php';
 $conexion = conexion();
 
-if (isset($_SESSION["usuario"])) {
+$idTema = $_GET["id_curso"];
+
+if (isset($_SESSION["usuario"]) && isset($_GET["id_curso"])) {
+    $nombreUsuario = $_SESSION["usuario"];
+    $traerIdUsuario = "SELECT * FROM usuarios WHERE usuario = '$nombreUsuario'";
+    $queryUsuario = mysqli_query($conexion, $traerIdUsuario);
+    $datosUsuario = mysqli_fetch_assoc($queryUsuario);
+    $idUsuario = $datosUsuario["id"];
+
+    $idTema = $_GET["id_curso"];
+
+    $traerCal = "SELECT * FROM calificacion JOIN tema ON calificacion.id_tema = tema.id_tema WHERE id_usuario = '$idUsuario' AND calificacion.id_tema = '$idTema'";
+    $queryCal = mysqli_query($conexion, $traerCal);
+
+    $fetchCal = mysqli_fetch_assoc($queryCal);
+    $nombreTema = $fetchCal["nombre_tema"];
+    $calificacion = $fetchCal["puntuacion"];
+
+    $aciertos = 0;
+    $errores = 0;
 ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -29,70 +48,139 @@ if (isset($_SESSION["usuario"])) {
         <div class="container">
             <h1 class="titulo text-center mt-5">Mis resultados</h1>
             <div class="container-fluid" style="border: solid 1px rgb(18, 168, 255); border-radius: 5px;">
-                <h2 class="titulo text-center my-3">Resultados del tema X</h2>
-                <div class="m-3">
-                    <h3 class="titulo">Preguntas opción multiple</h3>
-                    <div class="row text-center fw-bold" style="font-size: 20px; color: rgb(18, 168, 255);">
-                        <div class="col-md-8">
-                            <p>Pregunta</p>
+                <h2 class="titulo text-center my-3">Resultados del tema <?php echo $nombreTema; ?></h2>
+                <?php
+                $traerPreguntasM = "SELECT * FROM evaluacion_multiple JOIN pregunta_opmultiple ON evaluacion_multiple.id_pregunta = pregunta_opmultiple.id_pregunta WHERE evaluacion_multiple.id_tema = '$idTema' AND id_usuario = '$idUsuario'";
+                $queryPreguntasM = mysqli_query($conexion, $traerPreguntasM);
+
+                if (mysqli_num_rows($queryPreguntasM) > 0) {
+                ?>
+                    <div class="m-3">
+                        <h3 class="titulo my-5">Preguntas opción multiple (<?php echo mysqli_num_rows($queryPreguntasM); ?>)</h3>
+                        <div class="row text-center fw-bold" style="font-size: 20px; color: rgb(18, 168, 255); border-bottom: solid 2px rgb(18, 168, 255);">
+                            <div class="col-md-8">
+                                <p>Pregunta</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>Respuesta</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>Puntaje</p>
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <p>Respuesta</p>
+                        <?php
+                        while ($fetchM = mysqli_fetch_assoc($queryPreguntasM)) {
+                            $preguntaM = $fetchM["pregunta"];
+                            $respuestaM = $fetchM["respuesta_usuario"];
+                            $puntajeM = $fetchM["puntaje"];
+                        ?>
+                            <div class="row text-center text-white" style="font-size: 20px; border-bottom: solid 2px rgb(18, 168, 255);">
+                                <div class="col-md-8">
+                                    <p><?php echo $preguntaM; ?></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p><?php echo $respuestaM; ?></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <?php
+                                    if ($puntajeM == 0) {
+                                    ?>
+                                        <p class="text-danger">Incorrecto</p>
+                                    <?php
+                                        $errores += 1;
+                                    } else {
+                                    ?>
+                                        <p class="text-success">Correcto</p>
+                                    <?php
+                                        $aciertos += 1;
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div> <!-- Preguntas opción multiple -->
+                <?php
+                }
+
+                $traerPreguntasTF = "SELECT * FROM evaluacion_verdadero_fal JOIN pregunta_verd_fal ON evaluacion_verdadero_fal.id_pregunta = pregunta_verd_fal.id_pregunta WHERE evaluacion_verdadero_fal.id_tema = '$idTema' AND id_usuario = '$idUsuario'";
+                $queryPreguntasTF = mysqli_query($conexion, $traerPreguntasTF);
+
+                if (mysqli_num_rows($queryPreguntasTF) > 0) {
+                ?>
+                    <div class="m-3">
+                        <h3 class="titulo my-5">Preguntas verdadero/falso (<?php echo mysqli_num_rows($queryPreguntasTF); ?>)</h3>
+                        <div class="row text-center fw-bold" style="font-size: 20px; color: rgb(18, 168, 255); border-bottom: solid 2px rgb(18, 168, 255);">
+                            <div class="col-md-8">
+                                <p>Pregunta</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>Respuesta</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>Puntaje</p>
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <p>Puntaje</p>
+                        <?php
+                        while ($fetchTF = mysqli_fetch_assoc($queryPreguntasTF)) {
+                            $preguntaTF = $fetchTF["pregunta"];
+                            $respuestaTF = $fetchTF["respuesta_usuario"];
+                            $puntajeTF = $fetchTF["puntaje"];
+                        ?>
+                            <div class="row text-center text-white" style="font-size: 20px; border-bottom: solid 2px rgb(18, 168, 255);">
+                                <div class="col-md-8">
+                                    <p><?php echo $preguntaTF; ?></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p><?php echo $respuestaTF; ?></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <?php
+                                    if ($puntajeTF == 0) {
+                                    ?>
+                                        <p class="text-danger">Incorrecto</p>
+                                    <?php
+                                        $errores += 1;
+                                    } else {
+                                    ?>
+                                        <p class="text-success">Correcto</p>
+                                    <?php
+                                        $aciertos += 1;
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div><!-- Preguntas verdadero/falso -->
+                    <div class="m-3">
+                        <h3 class="titulo mt-5 mb-3">Resumen</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-danger" style="font-size: 20px;"><span class="titulo fw-bold">Errores: </span><?php echo $errores; ?></p>
+                                <p class="text-success" style="font-size: 20px;"><span class="titulo fw-bold">Aciertos: </span><?php echo $aciertos; ?></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-white" style="font-size: 20px;"><span class="titulo fw-bold">Preguntas totales: </span><?php echo $errores + $aciertos; ?></p>
+                                <?php
+                                if ($calificacion < 6) {
+                                ?>
+                                    <p class="text-danger" style="font-size: 20px;"><span class="titulo fw-bold">Calificación: </span><?php echo $calificacion; ?></p>
+                                <?php
+                                } else {
+                                ?>
+                                    <p class="text-success" style="font-size: 20px;"><span class="titulo fw-bold">Calificación: </span><?php echo $calificacion; ?></p>
+                                <?php
+                                }
+                                ?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row text-center text-white" style="font-size: 20px;">
-                        <div class="col-md-8">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, culpa?</p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>Respuesta</p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>Puntaje</p>
-                        </div>
-                    </div>
-                </div> <!-- Preguntas opción multiple -->
-                <div class="m-3">
-                    <h3 class="titulo mt-5">Preguntas verdadero/falso</h3>
-                    <div class="row text-center fw-bold" style="font-size: 20px; color: rgb(18, 168, 255);">
-                        <div class="col-md-8">
-                            <p>Pregunta</p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>Respuesta</p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>Puntaje</p>
-                        </div>
-                    </div>
-                    <div class="row text-center text-white" style="font-size: 20px;">
-                        <div class="col-md-8">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, culpa?</p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>Respuesta</p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>Puntaje</p>
-                        </div>
-                    </div>
-                </div><!-- Preguntas verdadero/falso -->
-                <div class="m-3">
-                    <h3 class="titulo mt-5 mb-3">Resumen</h3>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="text-white" style="font-size: 20px;"><span class="titulo fw-bold">Errores: </span>10</p>
-                            <p class="text-white" style="font-size: 20px;"><span class="titulo fw-bold">Aciertos: </span>10</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="text-white" style="font-size: 20px;"><span class="titulo fw-bold">Preguntas totales: </span>10</p>
-                            <p class="text-white" style="font-size: 20px;"><span class="titulo fw-bold">Calificación: </span>10</p>
-                        </div>
-                    </div>
-                </div><!-- Preguntas verdadero/falso -->
+                    </div><!-- Preguntas verdadero/falso -->
+                <?php
+                }
+                ?>
             </div>
         </div>
         <?php
@@ -104,7 +192,7 @@ if (isset($_SESSION["usuario"])) {
     </html>
 <?php
 } else {
-    header('Location: CrearCuenta.php');
+    header('Location: progreso.php');
     exit();
 }
 ?>
