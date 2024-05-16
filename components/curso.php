@@ -267,8 +267,9 @@ $idUsuario = $datosUsuario["id"];
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
+        <p class="text-white mt-3" style="font-size: 20px;"><span class="titulo fw-bold">Nota: </span>Es necesario aprobar cada curso con puntaje mínimo de 6 para pasar al siguiente curso.</p>
     </div>
 
     <?php require($ruta . 'layouts/footer.php'); ?>

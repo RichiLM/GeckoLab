@@ -171,8 +171,8 @@ if (isset($_POST["idTema"]) && isset($_POST["cantidadPmult"]) && isset($_POST["c
 
             <div class="row text-center mx-3 mt-5 mb-5">
                 <div class="col-sm">
-                    <p class="titulo display-1 my-auto" style="font-size: 40px;">Ahora puedes continuar con tu aprendizaje.</p>
-                    <a href="../curso.php" class="btn fw-bold mt-5 d-block mx-auto" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px; max-width: 200px;">Ver cursos</a>
+                    <p class="titulo display-1 my-auto" style="font-size: 40px;">Ahora puedes ver tus resultados y continuar con tu aprendizaje.</p>
+                    <a href="../progreso.php" class="btn fw-bold mt-5 d-block mx-auto" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px; max-width: 200px;">Ver resultado</a>
                 </div>
             </div>
         </div>
