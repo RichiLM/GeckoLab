@@ -58,16 +58,16 @@
                         <h6 class="text-uppercase fw-bold">Cursos</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 100px; background-color: #7c4dff; height: 2px" />
                         <p>
-                            <a href="#!" class="text-white">Analisis de datos</a>
+                            <a href="<?php echo $ruta . 'components/curso.php'; ?>" class="text-white">Analisis de datos</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Inteligencia de Negocios</a>
+                            <a href="<?php echo $ruta . 'components/curso.php'; ?>" class="text-white">Inteligencia de Negocios</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Machine Learning</a>
+                            <a href="<?php echo $ruta . 'components/curso.php'; ?>" class="text-white">Machine Learning</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Deep Learning</a>
+                            <a href="<?php echo $ruta . 'components/curso.php'; ?>" class="text-white">Deep Learning</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -78,13 +78,13 @@
                         <h6 class="text-uppercase fw-bold">Sitios de interes</h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 160px; background-color: #7c4dff; height: 2px" />
                         <p>
-                            <a href="#!" class="text-white">Iniciar Sesión</a>
+                            <a href="<?php echo $ruta . 'components/CrearCuenta.php'; ?>" class="text-white">Iniciar Sesión</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Registrarse</a>
+                            <a href="<?php echo $ruta . 'components/CrearCuenta.php'; ?>" class="text-white">Registrarse</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Cursos</a>
+                            <a href="<?php echo $ruta . 'components/CrearCuenta.php'; ?>" class="text-white">Cursos</a>
                         </p>
                         <p>
                             <a href="https://geckogg.000webhostapp.com/" class="text-white">Gecko Gaming</a>

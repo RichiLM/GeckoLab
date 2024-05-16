@@ -13,7 +13,7 @@
                     <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/curso.php'; ?>">Curso</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . '#'; ?>">Avance</a>
+                    <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/progreso.php'; ?>">Avance</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" style="color: white; font-size: 22px;" aria-current="page" href="<?php echo $ruta . 'components/nosotros.php'; ?>">Sobre Nosotros</a>
@@ -34,7 +34,7 @@
                         <?php
                         }
                         ?>
-                        <li><a class="dropdown-item" aria-current="page" href="<?php echo $ruta . 'components/historial.php'; ?>">Mi progreso</a></li>
+                        <li><a class="dropdown-item" aria-current="page" href="<?php echo $ruta . 'components/progreso.php'; ?>">Mi progreso</a></li>
                         <?php
                         if (isset($_SESSION['usuario'])) {
                         ?>

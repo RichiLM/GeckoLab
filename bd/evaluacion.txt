@@ -4,7 +4,8 @@ CREATE TABLE calificacion (
     foreign key (id_usuario) references usuarios (id),
     foreign key (id_tema) references tema (id_tema),
     primary key (id_usuario, id_tema),
-    puntuacion decimal (4, 2) not null
+    puntuacion decimal (4, 2) not null,
+    fecha date not null
 ) engine = innodb;
 
 CREATE TABLE evaluacion_multiple (

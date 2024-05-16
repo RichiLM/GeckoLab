@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-05-2024 a las 04:07:31
+-- Tiempo de generación: 16-05-2024 a las 02:36:06
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -49,7 +49,8 @@ INSERT INTO `admin` (`id_usuario`, `permiso`) VALUES
 CREATE TABLE `calificacion` (
   `id_usuario` int(11) NOT NULL,
   `id_tema` int(11) NOT NULL,
-  `puntuacion` decimal(4,2) NOT NULL
+  `puntuacion` decimal(4,2) NOT NULL,
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -66,6 +67,19 @@ CREATE TABLE `evaluacion_multiple` (
   `puntaje` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `evaluacion_multiple`
+--
+
+INSERT INTO `evaluacion_multiple` (`id_usuario`, `id_pregunta`, `id_tema`, `respuesta_usuario`, `puntaje`) VALUES
+(2, 1, 1, 'Interpretación de resultados', 0),
+(2, 2, 1, 'Histogramas', 1),
+(2, 3, 1, 'Modelado de datos', 0),
+(2, 4, 1, 'TensorFlow', 1),
+(2, 5, 1, 'Aprendizaje reforzado', 0),
+(2, 6, 1, 'PCA (Análisis de Componentes Principales)', 1),
+(2, 7, 1, 'NumPy', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -79,6 +93,15 @@ CREATE TABLE `evaluacion_verdadero_fal` (
   `respuesta_usuario` varchar(200) NOT NULL,
   `puntaje` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `evaluacion_verdadero_fal`
+--
+
+INSERT INTO `evaluacion_verdadero_fal` (`id_usuario`, `id_pregunta`, `id_tema`, `respuesta_usuario`, `puntaje`) VALUES
+(2, 1, 1, 'Falso', 0),
+(2, 2, 1, 'Verdadero', 0),
+(2, 3, 1, 'Verdadero', 1);
 
 -- --------------------------------------------------------
 

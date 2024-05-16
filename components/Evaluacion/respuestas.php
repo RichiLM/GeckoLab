@@ -20,6 +20,7 @@ if (isset($_POST["idTema"]) && isset($_POST["cantidadPmult"]) && isset($_POST["c
     $respuestas = array();
     $idsPreguntas = array();
     $aciertos = 0;
+    $fecha = date("Y-m-d");
 
     $verRespuestas = "SELECT * FROM calificacion WHERE id_tema = '$idTema' AND id_usuario = '$idUsuario'";
     $revisarRespuestas = mysqli_query($conexion, $verRespuestas);
@@ -68,7 +69,7 @@ if (isset($_POST["idTema"]) && isset($_POST["cantidadPmult"]) && isset($_POST["c
 
         $calificacion = ($aciertos * 10) / $cantidadPreg;
 
-        $insertCal = "INSERT INTO calificacion VALUES ('$idUsuario', '$idTema', '$calificacion')";
+        $insertCal = "INSERT INTO calificacion VALUES ('$idUsuario', '$idTema', '$calificacion', '$fecha')";
         mysqli_query($conexion, $insertCal);
     } else {
         # Si ya existen respuestas
@@ -131,7 +132,7 @@ if (isset($_POST["idTema"]) && isset($_POST["cantidadPmult"]) && isset($_POST["c
 
         $calificacion = ($aciertos * 10) / $cantidadPreg;
 
-        $updateCal = "UPDATE calificacion SET puntuacion = '$calificacion' WHERE id_usuario = '$idUsuario' AND id_tema = '$idTema'";
+        $updateCal = "UPDATE calificacion SET puntuacion = '$calificacion', fecha = '$fecha' WHERE id_usuario = '$idUsuario' AND id_tema = '$idTema'";
         mysqli_query($conexion, $updateCal);
     }
 ?>
