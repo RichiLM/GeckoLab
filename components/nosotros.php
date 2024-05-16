@@ -2,6 +2,8 @@
 // Esto es para que cargue las rutas del nav antes de abrir la pagina
 $ruta = '../';
 session_start();
+require 'conexion.php';
+$conexion = conexion();
 
 ?>
 <!DOCTYPE html>

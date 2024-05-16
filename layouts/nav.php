@@ -36,8 +36,31 @@
                         ?>
                         <li><a class="dropdown-item" aria-current="page" href="<?php echo $ruta . 'components/progreso.php'; ?>">Mi progreso</a></li>
                         <?php
+
                         if (isset($_SESSION['usuario'])) {
+                            $nombreUsuario = $_SESSION["usuario"];
+                            $traerIdUsuario = "SELECT * FROM usuarios WHERE usuario = '$nombreUsuario'";
+                            $queryUsuario = mysqli_query($conexion, $traerIdUsuario);
+                            $datosUsuario = mysqli_fetch_assoc($queryUsuario);
+                            $idUsuario = $datosUsuario["id"];
+
+                            $consultarPermiso = "SELECT * FROM admin WHERE id_usuario = '$idUsuario'";
+                            $verAdmin = mysqli_query($conexion, $consultarPermiso);
+
+                            if (mysqli_num_rows($verAdmin) > 0) {
+                                $fetchAdmin = mysqli_fetch_assoc($verAdmin);
+                                $estatusAdmin = $fetchAdmin["permiso"];
+
+                                if ($estatusAdmin == 1) {
                         ?>
+                                    <li><a class="dropdown-item" aria-current="page" href="<?php echo $ruta . 'components/admin.php'; ?>">Administrador</a></li>
+                            <?php
+                                }
+                            }
+                        }
+
+                        if (isset($_SESSION['usuario'])) {
+                            ?>
                             <li><a class="dropdown-item" aria-current="page" href="<?php echo $ruta . 'components/cerrarSesion.php'; ?>">Cerrar sesión</a></li>
                         <?php
                         }

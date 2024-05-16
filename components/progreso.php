@@ -84,6 +84,12 @@ if (isset($_SESSION["usuario"])) {
                             </div> <!-- .curso -->
                     <?php
                         }
+                    } else {
+                        ?>
+                        <h3 class="titulo text-center my-3">Aún no has completado un test</h3>
+
+                        <a href="curso.php" class="btn fw-bold my-5 d-block mx-auto" style="background-color: rgb(18, 168, 255); color: #000; font-size: 20px; max-width: 160px;">Ver cursos</a>
+                        <?php
                     }
                     ?>
                 </div>
