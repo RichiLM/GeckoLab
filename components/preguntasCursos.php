@@ -121,10 +121,14 @@ if (isset($_SESSION["usuario"]) && $estatusAdmin == 1 && isset($_GET["nombreTema
                             <p class="fw-bold text-white"><?php echo $respuestaIncorrecta3; ?></p>
                         </div>
                         <div class="col-md-1">
+                            <form action="editarPregM.php" method="get">
+                                <input type="hidden" name="idPregM" value="<?php echo $idPreguntaM; ?>">
+                                <input type="hidden" name="idTemaM" value="<?php echo $idTemaM; ?>">
+                                <button class="btn btn-warning my-2" type="submit">Editar</button>
+                            </form>
                             <form method="post">
                                 <input type="hidden" name="idPregM" value="<?php echo $idPreguntaM; ?>">
                                 <input type="hidden" name="idTemaM" value="<?php echo $idTemaM; ?>">
-                                <button class="btn btn-warning my-2" type="submit" name="editarPregM">Editar</button>
                                 <button class="btn btn-danger my-2" type="submit" name="borrarPregM">Eliminar</button>
                             </form>
                         </div>
@@ -181,10 +185,14 @@ if (isset($_SESSION["usuario"]) && $estatusAdmin == 1 && isset($_GET["nombreTema
                             <p class="fw-bold text-white"><?php echo $respuestaIncorrectaTF; ?></p>
                         </div>
                         <div class="col-md-1">
+                            <form action="editarPregTF.php" method="get">
+                                <input type="hidden" name="idPregTF" value="<?php echo $idPreguntaTF; ?>">
+                                <input type="hidden" name="idTemaTF" value="<?php echo $idTemaTF; ?>">
+                                <button class="btn btn-warning my-2" type="submit">Editar</button>
+                            </form>
                             <form method="post">
                                 <input type="hidden" name="idPregTF" value="<?php echo $idPreguntaTF; ?>">
                                 <input type="hidden" name="idTemaTF" value="<?php echo $idTemaTF; ?>">
-                                <button class="btn btn-warning my-2" type="submit" name="editarPregTF">Editar</button>
                                 <button class="btn btn-danger my-2" type="submit" name="borrarPregTF">Eliminar</button>
                             </form>
                         </div>
