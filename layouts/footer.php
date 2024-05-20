@@ -84,7 +84,7 @@
                             <a href="<?php echo $ruta . 'components/CrearCuenta.php'; ?>" class="text-white">Registrarse</a>
                         </p>
                         <p>
-                            <a href="<?php echo $ruta . 'components/CrearCuenta.php'; ?>" class="text-white">Cursos</a>
+                            <a href="<?php echo $ruta . 'components/curso.php'; ?>" class="text-white">Cursos</a>
                         </p>
                         <p>
                             <a href="https://geckogg.000webhostapp.com/" class="text-white">Gecko Gaming</a>
