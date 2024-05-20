@@ -6,11 +6,13 @@ session_start();
 require 'conexion.php';
 $conexion = conexion();
 
-$nombreUsuario = $_SESSION["usuario"];
-$traerIdUsuario = "SELECT * FROM usuarios WHERE usuario = '$nombreUsuario'";
-$queryUsuario = mysqli_query($conexion, $traerIdUsuario);
-$datosUsuario = mysqli_fetch_assoc($queryUsuario);
-$idUsuario = $datosUsuario["id"];
+if (isset($_SESSION["usuario"])) {
+    $nombreUsuario = $_SESSION["usuario"];
+    $traerIdUsuario = "SELECT * FROM usuarios WHERE usuario = '$nombreUsuario'";
+    $queryUsuario = mysqli_query($conexion, $traerIdUsuario);
+    $datosUsuario = mysqli_fetch_assoc($queryUsuario);
+    $idUsuario = $datosUsuario["id"];
+}
 
 ?>
 <!DOCTYPE html>
@@ -79,22 +81,22 @@ $idUsuario = $datosUsuario["id"];
                             <br>
                             <li class="Cuerpo-texto">Funciones y módulos en Python.</li>
                             <?php
-                            $verCurso = "SELECT * FROM calificacion WHERE id_tema = 1 AND id_usuario = '$idUsuario'";
-                            $ejectCurso = mysqli_query($conexion, $verCurso);
-                            $cal;
-                            if(mysqli_num_rows($ejectCurso) > 0) {
-                                $fetchCurso = mysqli_fetch_assoc($ejectCurso);
-                                $cal = $fetchCurso["puntuacion"];
-                            }
 
                             if (isset($_SESSION["usuario"])) {
+                                $verCurso = "SELECT * FROM calificacion WHERE id_tema = 1 AND id_usuario = '$idUsuario'";
+                                $ejectCurso = mysqli_query($conexion, $verCurso);
+                                $cal;
+                                if (mysqli_num_rows($ejectCurso) > 0) {
+                                    $fetchCurso = mysqli_fetch_assoc($ejectCurso);
+                                    $cal = $fetchCurso["puntuacion"];
+                                }
                                 if (!mysqli_num_rows($ejectCurso) > 0 || $cal < 6) {
                             ?>
                                     <button href="Temario/fundamentos.php" class="btn btn-primary btn-go-to-page mt-5" disabled>Ir al tema</button>
-                            <?php
+                                <?php
                                 } else {
-                                    ?>
-                                <a href="Temario/fundamentos.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
+                                ?>
+                                    <a href="Temario/fundamentos.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                             <?php
                                 }
                             }
@@ -120,22 +122,22 @@ $idUsuario = $datosUsuario["id"];
                             <br>
                             <li class="Cuerpo-texto">Limpieza y preprocesamiento de datos.</li>
                             <?php
-                            $verCurso = "SELECT * FROM calificacion WHERE id_tema = 2 AND id_usuario = '$idUsuario'";
-                            $ejectCurso = mysqli_query($conexion, $verCurso);
-                            $cal;
-                            if(mysqli_num_rows($ejectCurso) > 0) {
-                                $fetchCurso = mysqli_fetch_assoc($ejectCurso);
-                                $cal = $fetchCurso["puntuacion"];
-                            }
 
                             if (isset($_SESSION["usuario"])) {
+                                $verCurso = "SELECT * FROM calificacion WHERE id_tema = 2 AND id_usuario = '$idUsuario'";
+                                $ejectCurso = mysqli_query($conexion, $verCurso);
+                                $cal;
+                                if (mysqli_num_rows($ejectCurso) > 0) {
+                                    $fetchCurso = mysqli_fetch_assoc($ejectCurso);
+                                    $cal = $fetchCurso["puntuacion"];
+                                }
                                 if (!mysqli_num_rows($ejectCurso) > 0 || $cal < 6) {
                             ?>
                                     <button href="Temario/manipulacion.php" class="btn btn-primary btn-go-to-page mt-5" disabled>Ir al tema</button>
-                            <?php
+                                <?php
                                 } else {
-                                    ?>
-                                <a href="Temario/manipulacion.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
+                                ?>
+                                    <a href="Temario/manipulacion.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                             <?php
                                 }
                             }
@@ -161,22 +163,22 @@ $idUsuario = $datosUsuario["id"];
                             <br>
                             <li class="Cuerpo-texto">Personalización y diseño de gráficos.</li>
                             <?php
-                            $verCurso = "SELECT * FROM calificacion WHERE id_tema = 3 AND id_usuario = '$idUsuario'";
-                            $ejectCurso = mysqli_query($conexion, $verCurso);
-                            $cal;
-                            if(mysqli_num_rows($ejectCurso) > 0) {
-                                $fetchCurso = mysqli_fetch_assoc($ejectCurso);
-                                $cal = $fetchCurso["puntuacion"];
-                            }
 
                             if (isset($_SESSION["usuario"])) {
+                                $verCurso = "SELECT * FROM calificacion WHERE id_tema = 3 AND id_usuario = '$idUsuario'";
+                                $ejectCurso = mysqli_query($conexion, $verCurso);
+                                $cal;
+                                if (mysqli_num_rows($ejectCurso) > 0) {
+                                    $fetchCurso = mysqli_fetch_assoc($ejectCurso);
+                                    $cal = $fetchCurso["puntuacion"];
+                                }
                                 if (!mysqli_num_rows($ejectCurso) > 0 || $cal < 6) {
                             ?>
                                     <button href="Temario/visua.php" class="btn btn-primary btn-go-to-page mt-5" disabled>Ir al tema</button>
-                            <?php
+                                <?php
                                 } else {
-                                    ?>
-                                <a href="Temario/visua.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
+                                ?>
+                                    <a href="Temario/visua.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                             <?php
                                 }
                             }
@@ -203,22 +205,22 @@ $idUsuario = $datosUsuario["id"];
                             <br>
                             <li class="Cuerpo-texto">Evaluación de modelos y selección de características.</li>
                             <?php
-                            $verCurso = "SELECT * FROM calificacion WHERE id_tema = 4 AND id_usuario = '$idUsuario'";
-                            $ejectCurso = mysqli_query($conexion, $verCurso);
-                            $cal;
-                            if(mysqli_num_rows($ejectCurso) > 0) {
-                                $fetchCurso = mysqli_fetch_assoc($ejectCurso);
-                                $cal = $fetchCurso["puntuacion"];
-                            }
 
                             if (isset($_SESSION["usuario"])) {
+                                $verCurso = "SELECT * FROM calificacion WHERE id_tema = 4 AND id_usuario = '$idUsuario'";
+                                $ejectCurso = mysqli_query($conexion, $verCurso);
+                                $cal;
+                                if (mysqli_num_rows($ejectCurso) > 0) {
+                                    $fetchCurso = mysqli_fetch_assoc($ejectCurso);
+                                    $cal = $fetchCurso["puntuacion"];
+                                }
                                 if (!mysqli_num_rows($ejectCurso) > 0 || $cal < 6) {
                             ?>
                                     <button href="Temario/ml.php" class="btn btn-primary btn-go-to-page mt-5" disabled>Ir al tema</button>
-                            <?php
+                                <?php
                                 } else {
-                                    ?>
-                                <a href="Temario/ml.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
+                                ?>
+                                    <a href="Temario/ml.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                             <?php
                                 }
                             }
@@ -244,22 +246,22 @@ $idUsuario = $datosUsuario["id"];
                             <br>
                             <li class="Cuerpo-texto">Aplicaciones de Deep Learning en visión por computadora, procesamiento de lenguaje natural, y más.</li>
                             <?php
-                            $verCurso = "SELECT * FROM calificacion WHERE id_tema = 5 AND id_usuario = '$idUsuario'";
-                            $ejectCurso = mysqli_query($conexion, $verCurso);
-                            $cal;
-                            if(mysqli_num_rows($ejectCurso) > 0) {
-                                $fetchCurso = mysqli_fetch_assoc($ejectCurso);
-                                $cal = $fetchCurso["puntuacion"];
-                            }
 
                             if (isset($_SESSION["usuario"])) {
+                                $verCurso = "SELECT * FROM calificacion WHERE id_tema = 5 AND id_usuario = '$idUsuario'";
+                                $ejectCurso = mysqli_query($conexion, $verCurso);
+                                $cal;
+                                if (mysqli_num_rows($ejectCurso) > 0) {
+                                    $fetchCurso = mysqli_fetch_assoc($ejectCurso);
+                                    $cal = $fetchCurso["puntuacion"];
+                                }
                                 if (!mysqli_num_rows($ejectCurso) > 0 || $cal < 6) {
                             ?>
                                     <button href="Temario/dl.php" class="btn btn-primary btn-go-to-page mt-5" disabled>Ir al tema</button>
-                            <?php
+                                <?php
                                 } else {
-                                    ?>
-                                <a href="Temario/dl.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
+                                ?>
+                                    <a href="Temario/dl.php" class="btn btn-primary btn-go-to-page mt-5">Ir al tema</a>
                             <?php
                                 }
                             }
@@ -267,7 +269,7 @@ $idUsuario = $datosUsuario["id"];
                         </ul>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
         <p class="text-white mt-3" style="font-size: 20px;"><span class="titulo fw-bold">Nota: </span>Es necesario aprobar cada curso con puntaje mínimo de 6 para pasar al siguiente curso.</p>
     </div>
