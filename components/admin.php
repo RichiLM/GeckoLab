@@ -44,7 +44,7 @@ if (isset($_SESSION["usuario"]) && $estatusAdmin == 1) {
             $traerTemas = "SELECT * FROM tema";
             $queryTema = mysqli_query($conexion, $traerTemas);
             $fetchTema = mysqli_fetch_assoc($queryTema);
-            
+
             $temas = array();
             $numPreg = array();
             $cantTemas = mysqli_num_rows($queryTema);
@@ -56,7 +56,7 @@ if (isset($_SESSION["usuario"]) && $estatusAdmin == 1) {
                 $queryTema = mysqli_query($conexion, $traerTemas);
                 $fetchTema = mysqli_fetch_assoc($queryTema);
                 $temas[$i] = $fetchTema["nombre_tema"];
-                
+
                 $preguntasM = "SELECT * FROM pregunta_opmultiple WHERE id_tema = '$idTema'";
                 $cantM = mysqli_query($conexion, $preguntasM);
 
@@ -68,62 +68,80 @@ if (isset($_SESSION["usuario"]) && $estatusAdmin == 1) {
             ?>
             <div class="row">
                 <div class="col-md-4 my-3">
-                    <div class="card d-block mx-auto text-white text-center" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
+                    <div class="card d-block mx-auto text-white text-center h-100" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
                         <img src="../assets/cd.avif" class="card-img-top" alt="Curso">
                         <div class="card-body">
                             <h5 class="card-title titulo fw-bold"><?php echo $temas[0]; ?></h5>
                             <p class="card-text"><strong class="titulo fw-bold">Preguntas: </strong><?php echo $numPreg[0]; ?></p>
-                            <a href="#" class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</a>
+                            <form action="preguntasCursos.php" method="get">
+                                <input type="hidden" name="nombreTema" value="<?php echo $temas[0]; ?>">
+                                <button class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</button>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card d-block mx-auto text-white text-center" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
-                        <img src="../assets/cd.avif" class="card-img-top" alt="Curso">
+                    <div class="card d-block mx-auto text-white text-center h-100" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
+                        <img src="../assets/progra.jpg" class="card-img-top" alt="Curso">
                         <div class="card-body">
                             <h5 class="card-title titulo fw-bold"><?php echo $temas[1]; ?></h5>
                             <p class="card-text"><strong class="titulo fw-bold">Preguntas: </strong><?php echo $numPreg[1]; ?></p>
-                            <a href="#" class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</a>
+                            <form action="preguntasCursos.php" method="get">
+                                <input type="hidden" name="nombreTema" value="<?php echo $temas[1]; ?>">
+                                <button class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</button>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card d-block mx-auto text-white text-center" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
-                        <img src="../assets/cd.avif" class="card-img-top" alt="Curso">
+                    <div class="card d-block mx-auto text-white text-center h-100" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
+                        <img src="../assets/mani.jfif" class="card-img-top" alt="Curso">
                         <div class="card-body">
                             <h5 class="card-title titulo fw-bold"><?php echo $temas[2]; ?></h5>
                             <p class="card-text"><strong class="titulo fw-bold">Preguntas: </strong><?php echo $numPreg[2]; ?></p>
-                            <a href="#" class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</a>
+                            <form action="preguntasCursos.php" method="get">
+                                <input type="hidden" name="nombreTema" value="<?php echo $temas[2]; ?>">
+                                <button class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</button>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card d-block mx-auto text-white text-center" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
-                        <img src="../assets/cd.avif" class="card-img-top" alt="Curso">
+                    <div class="card d-block mx-auto text-white text-center h-100" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
+                        <img src="../assets/visua.jpg" class="card-img-top" alt="Curso">
                         <div class="card-body">
                             <h5 class="card-title titulo fw-bold"><?php echo $temas[3]; ?></h5>
                             <p class="card-text"><strong class="titulo fw-bold">Preguntas: </strong><?php echo $numPreg[3]; ?></p>
-                            <a href="#" class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</a>
+                            <form action="preguntasCursos.php" method="get">
+                                <input type="hidden" name="nombreTema" value="<?php echo $temas[3]; ?>">
+                                <button class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</button>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card d-block mx-auto text-white text-center" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
-                        <img src="../assets/cd.avif" class="card-img-top" alt="Curso">
+                    <div class="card d-block mx-auto text-white text-center h-100" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
+                        <img src="../assets/tec2.jpg" class="card-img-top" alt="Curso">
                         <div class="card-body">
                             <h5 class="card-title titulo fw-bold"><?php echo $temas[4]; ?></h5>
                             <p class="card-text"><strong class="titulo fw-bold">Preguntas: </strong><?php echo $numPreg[4]; ?></p>
-                            <a href="#" class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</a>
+                            <form action="preguntasCursos.php" method="get">
+                                <input type="hidden" name="nombreTema" value="<?php echo $temas[4]; ?>">
+                                <button class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</button>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 my-3">
-                    <div class="card d-block mx-auto text-white text-center" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
-                        <img src="../assets/cd.avif" class="card-img-top" alt="Curso">
+                    <div class="card d-block mx-auto text-white text-center h-100" style="width: 18rem; background-color: transparent; border: solid 1px rgb(18, 168, 255);">
+                        <img src="../assets/tec.jpeg" class="card-img-top" alt="Curso">
                         <div class="card-body">
                             <h5 class="card-title titulo fw-bold"><?php echo $temas[5]; ?></h5>
                             <p class="card-text"><strong class="titulo fw-bold">Preguntas: </strong><?php echo $numPreg[5]; ?></p>
-                            <a href="#" class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</a>
+                            <form action="preguntasCursos.php" method="get">
+                                <input type="hidden" name="nombreTema" value="<?php echo $temas[5]; ?>">
+                                <button class="btn fw-bold" style="background-color: rgb(18, 168, 255); color: #000; font-size: 18px;">Ver preguntas</button>
+                            </form>
                         </div>
                     </div>
                 </div>
